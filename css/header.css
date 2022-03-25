@@ -1,0 +1,190 @@
+@charset "utf-8";
+
+#header_set {
+    position: fixed;    /*fixedで上部固定*/
+    z-index: 999;       /* 最前面へ */
+    top: 0;             /* 一番上に */
+    width: 100%;
+    /* 範囲選択できないようにする */
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+/*　上に上がる動き　*/
+#header_set.UpMove {
+	animation: UpAnime 0.5s forwards;
+}
+@keyframes UpAnime {
+    from {
+        opacity: 1;
+    	transform: translateY(0);
+    }
+    to {
+        opacity: 0;
+    	transform: translateY(-100px);
+    }
+}
+
+/*　下に下がる動き　*/
+#header_set.DownMove {
+	animation: DownAnime 0.5s forwards;
+}
+@keyframes DownAnime {
+    from {
+    	opacity: 0;
+    	transform: translateY(-100px);
+    }
+    to {
+    	opacity: 1;
+    	transform: translateY(0);
+    }
+}
+
+/* 透明化 */
+header.toClear {
+    background-color: rgba(247,247,247,0);
+    box-shadow: 0 3px 6px rgba(0,0,0,0);
+}
+
+/* 不透明化 */
+header.toOpacity {
+    /* 背景透かし 0.97 */
+    background-color: rgba(247,247,247,0.97);
+    box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+}
+
+header {
+    background-color: rgba(247,247,247,0.97);
+    box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+    display: flex;  /* 横並び */
+    align-items: center;
+}
+
+header a {
+    text-decoration: none;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    color: #4b4b4b;
+}
+
+#header_logo {
+    color: #4b4b4b;
+    margin: 0 20px;
+    padding: 5px 0;
+    font-size: 20px;
+}
+
+#global_navi {
+    margin: 0 20px 0 auto;
+    right: 10px;
+}
+
+#global_navi ul li a {
+    position: relative;
+    font-size: 13px;
+}
+
+.login_button {
+    color: white;
+    background-color: #6fb7ff;
+    border-radius: 6px;
+    padding: 10px 30px;
+    font-weight: 500;
+}
+
+.login_button:hover {
+    background-color: #63a6e9;
+}
+
+header ul {
+    list-style: none;
+    margin: 0;
+    display: flex;
+}
+
+header li {
+    margin: 0 0 0 30px;
+    font-size: 17px;
+}
+
+#open i {
+    vertical-align: middle;
+    color: gray;
+}
+
+#account_menu {
+    width: 190px;
+    margin-top: 1px;
+    padding-bottom: 10px;
+    border-radius: 5px; /* 角を丸める */
+    box-shadow: 0 3px 6px rgba(0,0,0,0.1);  /* 外枠の影 */
+
+    /* 位置を絶対値指定に */
+    position: absolute;
+    right: -500px;
+
+    background-color: white;
+}
+
+#account_menu i {
+    vertical-align: middle;
+    color: #acacac;
+}
+
+#account_menu ul {
+    list-style: none;
+}
+
+#account_menu li {
+    font-size: 13px;
+    font-weight: 300;
+}
+
+#account_menu .select {
+    padding: 15px 0 15px 25px;
+}
+
+#account_menu .select:hover {
+    background-color: #ecf4f4;
+}
+
+#account_menu .account_name {
+    padding: 15px 0 15px 0;
+    text-align: center; /* テキストを中央揃え */
+    font-weight: 800;
+    border-bottom: solid 0.5px gainsboro;
+}
+
+#account_menu .logout {
+    border-top: solid 0.5px gainsboro;
+}
+
+/* account_menuの設定 */
+input[type="checkbox"] {
+    position: absolute;
+    left: -50vw;
+}
+
+input[type="checkbox"]:checked ~ #account_menu {
+    right: 20px;
+}
+
+
+/* スマホよりも大きい画面 */
+@media screen and (min-width: 760px) {
+   
+    #header_logo {
+        margin: 0 50px;
+        padding: 10px 0;
+        font-size: 25px;
+    }
+
+    #global_navi {
+        margin: 0 50px 0 auto;
+    }
+}
+
+/* タブレットよりも大きい画面 */
+@media screen and (min-width: 960px) {
+
+}

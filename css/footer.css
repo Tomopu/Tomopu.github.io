@@ -1,0 +1,90 @@
+@charset "utf-8";
+
+footer {
+    /* background: #f1f1f1; */
+    background-color: white;
+    max-width: 100%;
+    margin: 0;
+    /* 選択できないようにする */
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+footer ul {
+    list-style: none;
+}
+
+footer li {
+    font-size: 15px;
+    font-weight: 300;
+    padding: 4px 0;
+}
+
+footer h3 {
+    font-weight: 500;
+    padding-bottom: 10px;
+}
+
+footer a{
+    text-decoration: none;
+    color: black;
+}
+
+/*　ホバー時に下線を追加 */
+footer a:hover {
+    border-bottom: 1px solid black;
+}
+
+#footer_menu {
+    padding-bottom: 35px;
+}
+
+#footer_navi, #footer_portal {
+    padding-top: 35px;
+    padding-left: 10%;
+    vertical-align:top;
+}
+
+#cmark {
+    display: block;
+    padding: 10px;
+    border-top: 1px solid gray;
+    width: 80%;
+    font-size: 10px;
+    text-align: center;
+    margin: 0 auto;
+    color: gray;
+}
+
+/* スマホよりも大きい画面 */
+@media screen and (min-width: 760px) {
+   
+    footer li {
+        font-size: 15px;
+        font-weight: 300;
+        padding: 4px 0;
+    }
+
+    footer h3 {
+        font-weight: 500;
+        font-size: 130%;
+        padding-bottom: 10px;
+    }
+
+    #footer_menu {
+        padding-bottom: 35px;
+    }
+
+    #footer_navi, #footer_portal {
+        padding-top: 35px;
+        padding-left: 10%;
+        display: inline-block;
+    }
+
+}
+ 
+/* タブレットよりも大きい画面 */
+@media screen and (min-width: 960px) {
+
+}
+ 
