@@ -1,0 +1,91 @@
+/* タブの表示・非表示 */
+
+[data-tab-content]{
+   display: none
+}
+  
+[data-tab-content].active{
+   display: block;
+}
+
+.tabs__body a {
+   text-decoration: none;
+   color: black;
+}
+.tabs__body a:hover{
+   text-decoration: underline;
+}
+
+.channel {
+   color: #565656;
+}
+  
+/* section同士の余白 */
+/* section.someTabs {
+   margin-bottom: 40px;
+   border-bottom: solid 1px #eee;
+   padding-bottom: 30px;
+}
+section.someTabs:last-child {
+   margin: 0;
+   padding: 0;
+   border: none;
+} */
+
+/* タブの中身のpタグの余白 */
+/* .tabs__content p {
+   margin-bottom: 10px;
+}
+.tabs__content p:last-child {
+   margin-bottom: 0;
+} */
+  
+/* タブの見出し */
+/* nav.tabs__nav {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   flex-wrap: wrap;
+   width: 100%;
+   padding: 0;
+   margin: 0 0 1rem;
+   border: none;
+   box-shadow: 0 7px 34px rgb(50 50 93 / 10%), 0 3px 6px rgb(0 0 0 / 8%);
+}
+nav.tabs__nav a:first-child {
+   border-radius: 3px 0 0 3px;
+   border-right: solid 1px #eee;
+}
+nav.tabs__nav a:last-child {
+   border-radius: 0 3px 3px 0;
+   border-left: solid 1px #eee;
+}
+a.tabs__item {
+   display: inline-block;
+   width: calc(100%/3);
+   text-align: center;
+   transition: all 0.2s ease;
+   padding: 0;
+   line-height: 50px;
+   text-decoration: none;
+   background: #FFF;
+}
+a.tabs__item.active {
+   background: linear-gradient( 45deg , #bdb9ff, #67b8ff);
+   color: #FFF;
+}
+   */
+  
+/* 表示のアニメーション */
+/* @keyframes fadeIn {
+   0% {
+      opacity: 0;
+      transform: translateY(30px);
+   }
+   100% {
+      opacity: 1;
+   }
+}
+.tabs__content.active {
+   animation: fadeIn 0.7s ease 0s 1 normal;
+} */
