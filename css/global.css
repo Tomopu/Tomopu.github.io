@@ -1,0 +1,84 @@
+@charset "UTF-8";
+
+* {
+    font-family: "Zen Kaku Gothic New", sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    margin: 0;
+    padding: 0;
+}
+
+p, li, a, h1, h2, h3, h4, h5, h6 {
+    color: #262628;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 700;
+    margin: 20px 0;
+}
+
+h1 span {
+    font-weight: 700;
+}
+
+h2 {
+    color: #ffffff;
+    background-color: #262628;
+    padding: 5px 20px;
+    width: fit-content;
+}
+
+a {
+    cursor: pointer;
+}
+
+a:hover {
+    color: #878791;
+}
+
+main {
+    margin: 0 auto;
+    padding: 10px;
+    width: 85%;
+}
+
+section {
+    margin: 10px 10px 30px 10px;
+    padding-bottom: 20px;
+    border-bottom: solid 1px #e5e4e4;
+}
+
+ol li {
+    padding: 8px 0;
+    margin-left: 20px;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+table td {
+    padding: 16px 8px;
+}
+
+tr td:first-child {
+    min-width: 80px;
+}
+
+tr td:nth-child(2) {
+    min-width: 100px;
+}
+
+span {
+    display: inline-block;
+}
+
+.even-row-gray tr:nth-child(even) {
+    background-color: #f1f1f1;
+}
+
+@media screen and (max-width: 750px) {
+    main {
+        width: 95%;
+    }
+}
