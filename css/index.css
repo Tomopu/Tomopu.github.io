@@ -5,9 +5,13 @@
     font-weight: bold;
 }
 
+body {
+    position: relative;
+}
+
 #main-visual {
     display: flex;
-    justify-content: center;
+    justify-content: left;
     align-items: center;
 }
 
@@ -20,7 +24,7 @@
     height: 400px;
 }
 
-@media screen and (max-width: 750px) {
+@media screen and (max-width: 768px) {
     #main-visual {
         display: block;
         margin-bottom: 30px;

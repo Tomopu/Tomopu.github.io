@@ -77,7 +77,7 @@ span {
     background-color: #f1f1f1;
 }
 
-@media screen and (max-width: 750px) {
+@media screen and (max-width: 768px) {
     main {
         width: 95%;
     }
