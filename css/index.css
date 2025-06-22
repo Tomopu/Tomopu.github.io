@@ -9,6 +9,10 @@ body {
     position: relative;
 }
 
+span {
+    display: inline-block;
+}
+
 #main-visual {
     display: flex;
     justify-content: left;

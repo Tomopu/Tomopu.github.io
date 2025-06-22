@@ -1,11 +1,15 @@
 @charset "UTF-8";
 
 * {
-    font-family: "Zen Kaku Gothic New", sans-serif;
     font-style: normal;
     font-weight: 400;
     margin: 0;
     padding: 0;
+}
+
+/* KaTeX以外のフォント設定 */
+*:not(.katex):not(.katex *) {
+    font-family: "Zen Kaku Gothic New", sans-serif;
 }
 
 p, li, a, h1, h2, h3, h4, h5, h6 {
@@ -15,6 +19,10 @@ p, li, a, h1, h2, h3, h4, h5, h6 {
 h1, h2, h3, h4, h5, h6 {
     font-weight: 700;
     margin: 20px 0;
+}
+
+h1 {
+    font-size: 30px;
 }
 
 h1 span {
@@ -69,8 +77,24 @@ tr td:nth-child(2) {
     min-width: 100px;
 }
 
-span {
-    display: inline-block;
+.bold {
+    font-weight: 800;
+}
+
+.marker-yellow {
+    background-color: #faf3de;
+}
+
+.marker-blue {
+    background-color: #e9f4f7;
+}
+
+.maker-red {
+    background-color: #faedec;
+}
+
+.maker-green {
+    background-color: #eef4ed;
 }
 
 .even-row-gray tr:nth-child(even) {

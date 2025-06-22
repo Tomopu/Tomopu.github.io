@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="/img/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="/css/global.css">
+  <link rel="stylesheet" href="/css/header.css">
+  <link rel="stylesheet" href="/css/blog.css">
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New&display=swap" rel="stylesheet">
+  <!-- KaTeX -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/katex.min.css" integrity="sha384-5TcZemv2l/9On385z///+d7MSYlvIEw9FuZTIdZ14vJLqWphw7e7ZPuOiCHJcFCP" crossorigin="anonymous">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/katex.min.js" integrity="sha384-cMkvdD8LoxVzGF/RPUKAcvmm49FQ0oxwDF3BGKtDXcEc+T1b2N+teh/OJfpU0jr6" crossorigin="anonymous"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/contrib/auto-render.min.js" integrity="sha384-hCXGrW6PitJEwbkoStFjeJxv+fSOOQKOPbJxSfM6G5sWZjAyWhXiTIIAmQqnlLlh" crossorigin="anonymous"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      renderMathInElement(
+        document.body,
+        {
+          delimiters: [
+            {left: "$$", right: "$$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "$", right: "$", display: false},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        });
+    });
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "バンディット問題とは",
+    "datePublished": "2025-06-22",
+    "dateUpdated": "2025-06-22",
+    "author": {
+      "@type": "Person",
+      "name": "IZUMI Tomonari"
+    },
+    "keywords": ["バンディット問題", "強化学習", "機械学習"],
+    "description": "バンディット問題とは, 知識の探索と利用を効率的に行う機械学習の一種です. "
+  }
+  </script>
+  <title>バンディット問題とは</title>
+</head>
+
+<body>
+  <header id="header">
+    <a href="/" class="header_logo">
+      <img src="/img/icon.jpeg" alt="icon" class="icon">
+      <h1>IZUMI TOMONARI</h1>
+    </a>
+    <input type="checkbox" name="hamburger" id="hamburger" class="hamburger-checkbox"/>
+    <ul class="header_list hamburger-menu_list">
+      <li class="header_list-item">
+        <a href="/math.html" class="header_list-link">教材リンク集</a>
+      </li>
+      <li class="header_list-item">
+        <a href="/blog/" class="header_list-link">ブログ一覧</a>
+      </li>
+      <li class="header_list-item">
+        <a href="/link.html" class="header_list-link">リンク集</a>
+      </li>
+      <li class="header_list-item lang-change">
+        <a href="/en"><svg width="100%" height="100%" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C15 4 15.9228 8.29203 16 12C15.9228 15.708 15 20 12 22M12 2C9 4 8.07725 8.29203 8 12C8.07725 15.708 9 20 12 22M12 2C6.47715 2 2 6.47715 2 12M12 2C17.5228 2 22 6.47715 22 12M12 22C17.5229 22 22 17.5228 22 12M12 22C6.47716 22 2 17.5228 2 12M22 12C20 15 15.708 15.9228 12 16C8.29203 15.9228 4 15 2 12M22 12C20 9 15.708 8.07725 12 8C8.29203 8.07725 4 9 2 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>EN</a>
+      </li>
+      <li class="header_list-item">
+        <a href="https://github.com/Tomopu" class="header_list-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path d="M12 1C5.9225 1 1 5.9225 1 12C1 16.8675 4.14875 20.9787 8.52125 22.4362C9.07125 22.5325 9.2775 22.2025 9.2775 21.9137C9.2775 21.6525 9.26375 20.7862 9.26375 19.865C6.5 20.3737 5.785 19.1912 5.565 18.5725C5.44125 18.2562 4.905 17.28 4.4375 17.0187C4.0525 16.8125 3.5025 16.3037 4.42375 16.29C5.29 16.2762 5.90875 17.0875 6.115 17.4175C7.105 19.0812 8.68625 18.6137 9.31875 18.325C9.415 17.61 9.70375 17.1287 10.02 16.8537C7.5725 16.5787 5.015 15.63 5.015 11.4225C5.015 10.2262 5.44125 9.23625 6.1425 8.46625C6.0325 8.19125 5.6475 7.06375 6.2525 5.55125C6.2525 5.55125 7.17375 5.2625 9.2775 6.67875C10.1575 6.43125 11.0925 6.3075 12.0275 6.3075C12.9625 6.3075 13.8975 6.43125 14.7775 6.67875C16.8813 5.24875 17.8025 5.55125 17.8025 5.55125C18.4075 7.06375 18.0225 8.19125 17.9125 8.46625C18.6138 9.23625 19.04 10.2125 19.04 11.4225C19.04 15.6437 16.4688 16.5787 14.0213 16.8537C14.42 17.1975 14.7638 17.8575 14.7638 18.8887C14.7638 20.36 14.75 21.5425 14.75 21.9137C14.75 22.2025 14.9563 22.5462 15.5063 22.4362C19.8513 20.9787 23 16.8537 23 12C23 5.9225 18.0775 1 12 1Z"></path></svg></a>
+      </li>
+    </ul>
+    <label for="hamburger" class="hamburger-button">
+      <span class="hamburger-mark"></span>
+      <span class="hamburger-mark"></span>
+      <span class="hamburger-mark"></span>
+    </label>
+  </header>
+
+  <main id="main">
+    <h1>バンディット問題とは</h1>
+    <p>作成日: 2025年6月22日</p>
+    <section>
+      <h2>はじめに</h2>
+      <p>本稿は, 筆者が<span class="bold marker-yellow">多腕バンディット問題</span> (Multi-Armed Bandit Problem) の研究に取り組むにあたり, 理論的な整理と基本概念の再確認を目的として作成した備忘録である. 外部読者に向けた包括的な解説や体系的な網羅を意図するものではなく, 自身の理解の定着と再参照を主眼に置いている.</p>
+      <p>取り上げる内容は, バンディット問題の数理モデルとその主要な変種 (確率的, 敵対的, マルチプレイヤー) に関する概要的整理にとどまる. 各問題設定における基本的な<span class="bold marker-yellow">方策</span> (policy) や代表的アルゴリズムの構成原理についても言及するが, 実装や応用事例の詳細には踏み込まない.</p>
+      <p>以下では, 単純なモデルから出発し, 各種設定における基本概念と代表的アプローチを整理する. 自身の研究の基盤を明確にすることを目的とし, 必要最小限の範囲において記述を行う.</p>
+    </section>
+    <section>
+      <h2>多腕バンディット問題とは</h2>
+      <p>多腕バンディット問題 <span>[Thompson, 1933]</span>は, 複数の選択肢 (アーム, または腕) の中から1つを選択し, その結果として得られる報酬を観測するという状況を繰り返すことで, 報酬和を最大化を目指す逐次決定問題である. 各アームには, プレイヤーにとって未知の報酬分布が割り当てられており, プレイヤーはこれまでの選択と得られた報酬の履歴をもとに, 次のラウンドの選択を行う. この問題の名称は, カジノにあるスロットマシン (one-armed bandit) に由来する. 各マシンは片腕のレバーを引くと報酬が得られる構造であり, どのマシン (アーム) が最も高い報酬を与えるかを試行錯誤の中で見極める点が, 本問題の構造と一致する. <span class="marker-yellow">"bandit” は英語で「盗賊」</span>を意味するが, スロットマシンがプレイヤーの金を奪う存在として俗にそう呼ばれたことによる. 現在では, $K$台のスロットマシンからの報酬和を最大化する先の問題を多腕バンディット問題とよび, それを一般化した問題を単にバンディット問題と総称される.</p>
+      <p>最も単純なモデルでは, $K$ 個のアームがあり, 各アーム $i \in \{1, \dots, K\}$ に対して, 成功確率 $\theta_i$ に従うベルヌーイ分布が割り当てられている (図1). 各ラウンド $t$ において, プレイヤーはアーム $i_t$ を選び, その報酬 $X_{i_t}(t) \sim \text{Bern}(\theta_{i_t})$ を観測する. ここで $X_i(t) \in \{0, 1\}$ は失敗 (0)または成功 (1) を表す.</p>
+      <div class="figure">
+        <img src="/img/blog/bandit-problem/example-simple-bandit.png" alt="figure" class="figure_image">
+        <p class="figure_caption">図1. 最もシンプルなバンディット問題</p>
+      </div>
+      <p>
+        この問題において, 試行回数の区間は<span class="bold marker-yellow">有限時間区間</span> (finite horizon) と <span class="bold marker-yellow">無限時間区間</span> (infinite horizon) の2つに分類される.
+        プレイヤーの目的は, 適切な選択方策 $\pi$ を設計し, それぞれの設定において累積報酬を最大化することである.
+      </p>
+      <ul class="itemize">
+        <li>
+          <strong>有限時間区間の場合</strong>:<br>
+          累積報酬 (cumulative reward) を最大化する:
+          \[
+          \sum_{t=1}^T X_{i_t}(t) \tag{1}
+          \]
+        </li>
+        <li>
+          <strong>無限時間区間の場合</strong>:<br>
+          幾何割引 (geometric discount) $\gamma_t = \gamma^{t-1}$ ($0 < \gamma < 1$) を掛けた割引累積期待報酬を最大化する:
+          \[
+          \sum_{t=1}^{\infty} \gamma_t X_{i_t}(t) \tag{2}
+          \]
+        </li>
+      </ul>
+      <p>近年は, 有限時間区間における累積報酬で方策を評価するのが主流となっている. 上記のように, プレイヤーの目的は累積報酬を最大化することであるが, 実際の性能を評価する際には, <span class="bold marker-yellow">リグレット</span> (regret; 後悔) の最小化が基本的な指標とされる.</p>
+      <p>
+        リグレットとは, 最良のアームのみを常に選択していた場合と比較して, 実際の選択戦略によって失われた報酬の差を定量化したものである. 有限時間区間 $T$ におけるリグレットは以下で定義される:
+        \[
+        \text{Regret}(T) = \max_{i \in \{1, \dots, K\}}\sum_{t=1}^T X_i(t) - \sum_{t=1}^T X_{i_t}(t) \tag{3}
+        \]
+      </p>
+      <p>ただし, $X_i(t)$ は確率変数であるため, 通常はリグレットの期待値をとった<span class="bold marker-yellow">期待リグレット</span> (expected regret) :
+        \[
+          \mathbb{E}[\text{Regret}(T)] = \mathbb{E}\left[\max_{i \in \{1, \dots, K\}}\sum_{t=1}^T X_i(t) - \sum_{t=1}^T X_{i_t}(t)\right] \tag{4}
+        \]
+        を評価指標として用いる. したがって, 良い方策 $\pi$ とは, 期待リグレット $\mathbb{E}[\text{Regret}(T)]$ の成長率ができる限り小さくなるように設計されたものである.</p>
+    </section>
+    <section>
+      <h2>探索と活用のトレードオフ</h2>
+      <p>多腕バンディット問題の本質は, まだよく知らない選択肢を試す<span class="bold marker-yellow">探索</span> (exploration) と, すでに良いとわかっている選択肢を繰り返す<span class="bold marker-yellow">活用</span> (exploitation) のバランスをどう取るか, という問いである.</p>
+      <p>たとえば, 引っ越したばかりの人が毎日ランチの店を選ぶ場面を考える. 初日は適当に選ぶしかないが, 数日試して「この店はハズレがない」と分かればそこに通いたくなる. しかし, 試していない店の中にもっと良い選択肢があるかもしれない. どこかの段階で「新しい店を開拓するか」「いつもの店に行くか」を考え続けることになる. これが探索と活用のトレードオフである. </p>
+      <div class="figure">
+        <img src="/img/blog/bandit-problem/exploration-and-exploitation.png" alt="探索と活用のトレードオフ" class="figure_image">
+        <p class="figure_caption">図2. 探索と活用のトレードオフ</p>
+      </div>
+      <p>図2に示すように, <span class="bold marker-yellow">探索</span>とは, 選択回数の少ない腕を意図的に選び, 各腕の成功確率 $\theta_i$ に対する推定値 $\hat{\theta}_i$ の信頼性を高める行動である. 試行が少ないアームに関しては, $\hat{\theta}_i$ のばらつきが大きく, その評価は不確かである. よって, プレイヤーは情報獲得のために, あえて $\hat{\theta}_i$ が高くない腕を選ぶ必要がある. </p>
+      <p>一方の <span class="bold marker-yellow">活用</span>は, 現時点での推定値 $\hat{\theta}_i$ が最大の腕を選んで報酬を得る行動であり, 知識を直接的に利益に変える選択である. ただし, 探索を怠って早期に活用に偏ると, 本来最良の腕 $\theta^*$ を見逃してしまうリスクがある.</p>
+      <p>このように, $\hat{\theta}_i$ の推定値がある程度の精度に達するまでは, 各アームを適切に試行し, 探索と活用の比率を動的に調整する必要がある. 優れた方策 $\pi$ は, このバランスを保ちながら, 最終的な期待リグレット $\mathbb{E}[\text{Regret}(T)]$ の増加を抑制する設計となっている.</p>
+    </section>
+    <section>
+      <h2>バンディット問題の主な分類</h2>
+      <h3>目的指標による分類</h3>
+      <p>バンディット問題は, 目的関数の違いにより大きく以下の二つに分類される:</p>
+      <ul class="itemize">
+        <li>
+          <strong>累積報酬最大化 (cumulative reward maximization)</strong> :<br>
+          各ラウンドで得られる報酬を逐次的に観測しながら, 最終的な累積報酬 $\sum_{t=1}^T X_{i_t}(t)$ を最大化する. 通常は, リグレットを評価指標とし, これを最小化することを目的とする.
+        </li>
+        <li>
+          <strong>最適腕識別 (best-arm identification)</strong> :<br>
+          期待報酬が最大のアームを $i^*$ とするとき, 累積報酬の最大化は目的に含まず, ラウンド $T$ 後の $i^*$ の推定値 $\hat{i}^*(T)$ を誤識別率 $P_e = \mathbb{P}[\hat{i}^*(T) \neq i^*]$ を最小化することを目的とする.
+          また, 最適腕識別の定式化は, 以下の2つに分けられる:
+          <ul class="itemize">
+            <li>
+              <strong>固定予算 (fixed budget)</strong> :<br>
+              与えられた試行回数 $T$ の中で, 最適なアームを識別することを目指す. 例えば, $T$ 回の試行後に最適アームを識別できる確率を最大化する.
+            </li>
+            <li>
+              <strong>固定信頼度 (fixed confidence)</strong> :<br>
+              試行回数は可変とし, 事前に定めた信頼度 $\delta \in (0, 1)$ の下で, 誤識別率が $\delta$ 以内と確信するまで探索を続ける. 探索を終了する停止規則のもとで, 停止時刻を $\tau$ とすると, $P_e \leq \delta$ かつ $\mathbb{E}[\tau]$ を最小化することを目的とする.
+            </li>
+          </ul>
+        </li>
+      </ul>
+      <h3>問題構造による分類</h3>
+      <p>バンディット問題は, 報酬構造・観測モデル・環境の性質によっても, 以下のように細分化される:</p>
+      <ul class="itemize">
+        <li>
+          <strong>確率的バンディット (stochastic bandits)</strong> :<br>
+          各アームの報酬分布が固定されており, 時間とともに変化しない.
+        </li>
+        <li>
+          <strong>敵対的バンディット (adversarial bandits)</strong> :<br>
+          敵対的バンディットでは, プレイヤーの方策をあらかじめ知っている<span class="bold marker-yellow">敵対者</span> (advarsary) が, プレイヤーの報酬を最小化するような報酬列$\{X_i(t)\}$を自由に設定する環境を扱う. ただし, 敵対者はプレイヤーが実際に選択したアームを知る前に報酬列を決定する. この定式化では, 悪意ある報酬の変動に対しても性能を保証することが求められる.
+        </li>
+        <li>
+          <strong>マルチプレイヤーバンディット (multi-player bandits; MPB)</strong> :<br>
+          複数のプレイヤーが同時にアームを選択し, 他者との<span class="bold marker-yellow">衝突</span> (collision) が発生する環境下において, 全体の累積報酬を最大化することを目的とする. MPBでは, 共有できる情報の種類や, 中央集権型か, 分散型かによってもモデルが細かく分類される.
+        </li>
+      </ul>
+    </section>
+  </main>
+  <footer></footer>
+  <script src="/js/header.js"></script>
+</body>
+</html>
