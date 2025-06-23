@@ -74,6 +74,16 @@ p {
     max-width: 600px;
 }
 
+.scrollable .katex-html {
+    width: 100%;
+}
+
+.scrollable .katex-html .base {
+    width: 87%;
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+
 @media (max-width: 600px) {
     .figure img {
         width: 100%;
