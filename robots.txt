@@ -1,0 +1,3 @@
+User-agent: *
+Disallow: /img/
+Sitemap: https://tomopu.github.io/sitemap.xml
