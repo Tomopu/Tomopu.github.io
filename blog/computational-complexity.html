@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="/img/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="/css/global.css">
+  <link rel="stylesheet" href="/css/header.css">
+  <link rel="stylesheet" href="/css/blog.css">
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New&display=swap" rel="stylesheet">
+  <!-- KaTeX -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/katex.min.css" integrity="sha384-5TcZemv2l/9On385z///+d7MSYlvIEw9FuZTIdZ14vJLqWphw7e7ZPuOiCHJcFCP" crossorigin="anonymous">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/katex.min.js" integrity="sha384-cMkvdD8LoxVzGF/RPUKAcvmm49FQ0oxwDF3BGKtDXcEc+T1b2N+teh/OJfpU0jr6" crossorigin="anonymous"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/contrib/auto-render.min.js" integrity="sha384-hCXGrW6PitJEwbkoStFjeJxv+fSOOQKOPbJxSfM6G5sWZjAyWhXiTIIAmQqnlLlh" crossorigin="anonymous"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      renderMathInElement(
+        document.body,
+        {
+          delimiters: [
+            {left: "$$", right: "$$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "$", right: "$", display: false},
+            {left: "\\(", right: "\\)", display: false}
+          ]
+        });
+    });
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "アルゴリズムの効率の指標について",
+    "datePublished": "2025-10-21",
+    "dateUpdated": "2025-10-21",
+    "author": {
+      "@type": "Person",
+      "name": "IZUMI Tomonari"
+    },
+    "keywords": ["アルゴリズム", "計算量", "計算複雑性理論", "漸近的記法"],
+    "description": "アルゴリズムの効率の指標に用いられる計算量について解説します. "
+  }
+  </script>
+  <title>アルゴリズムの効率の指標について</title>
+</head>
+
+<body>
+  <header id="header">
+    <a href="/" class="header_logo">
+      <img src="/img/icon.jpeg" alt="icon" class="icon">
+      <h1>IZUMI TOMONARI</h1>
+    </a>
+    <input type="checkbox" name="hamburger" id="hamburger" class="hamburger-checkbox"/>
+    <ul class="header_list hamburger-menu_list">
+      <li class="header_list-item">
+        <a href="/math.html" class="header_list-link">教材リンク集</a>
+      </li>
+      <li class="header_list-item">
+        <a href="/blog/" class="header_list-link">ブログ一覧</a>
+      </li>
+      <li class="header_list-item">
+        <a href="/link.html" class="header_list-link">リンク集</a>
+      </li>
+      <li class="header_list-item lang-change">
+        <a href="/en"><svg width="100%" height="100%" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C15 4 15.9228 8.29203 16 12C15.9228 15.708 15 20 12 22M12 2C9 4 8.07725 8.29203 8 12C8.07725 15.708 9 20 12 22M12 2C6.47715 2 2 6.47715 2 12M12 2C17.5228 2 22 6.47715 22 12M12 22C17.5229 22 22 17.5228 22 12M12 22C6.47716 22 2 17.5228 2 12M22 12C20 15 15.708 15.9228 12 16C8.29203 15.9228 4 15 2 12M22 12C20 9 15.708 8.07725 12 8C8.29203 8.07725 4 9 2 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>EN</a>
+      </li>
+      <li class="header_list-item">
+        <a href="https://github.com/Tomopu" class="header_list-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path d="M12 1C5.9225 1 1 5.9225 1 12C1 16.8675 4.14875 20.9787 8.52125 22.4362C9.07125 22.5325 9.2775 22.2025 9.2775 21.9137C9.2775 21.6525 9.26375 20.7862 9.26375 19.865C6.5 20.3737 5.785 19.1912 5.565 18.5725C5.44125 18.2562 4.905 17.28 4.4375 17.0187C4.0525 16.8125 3.5025 16.3037 4.42375 16.29C5.29 16.2762 5.90875 17.0875 6.115 17.4175C7.105 19.0812 8.68625 18.6137 9.31875 18.325C9.415 17.61 9.70375 17.1287 10.02 16.8537C7.5725 16.5787 5.015 15.63 5.015 11.4225C5.015 10.2262 5.44125 9.23625 6.1425 8.46625C6.0325 8.19125 5.6475 7.06375 6.2525 5.55125C6.2525 5.55125 7.17375 5.2625 9.2775 6.67875C10.1575 6.43125 11.0925 6.3075 12.0275 6.3075C12.9625 6.3075 13.8975 6.43125 14.7775 6.67875C16.8813 5.24875 17.8025 5.55125 17.8025 5.55125C18.4075 7.06375 18.0225 8.19125 17.9125 8.46625C18.6138 9.23625 19.04 10.2125 19.04 11.4225C19.04 15.6437 16.4688 16.5787 14.0213 16.8537C14.42 17.1975 14.7638 17.8575 14.7638 18.8887C14.7638 20.36 14.75 21.5425 14.75 21.9137C14.75 22.2025 14.9563 22.5462 15.5063 22.4362C19.8513 20.9787 23 16.8537 23 12C23 5.9225 18.0775 1 12 1Z"></path></svg></a>
+      </li>
+    </ul>
+    <label for="hamburger" class="hamburger-button">
+      <span class="hamburger-mark"></span>
+      <span class="hamburger-mark"></span>
+      <span class="hamburger-mark"></span>
+    </label>
+  </header>
+
+  <main id="main">
+    <h1>アルゴリズムの効率の指標について</h1>
+    <p>作成日: 2025年10月21日, 最終更新日: 2025年10月21日</p>
+    <section>
+      <h2>はじめに</h2>
+      <p>本稿は, 筆者がアルゴリズム工学の研究に取り組むにあたり, 理論的な整理と基本概念の再確認を目的として作成した備忘録である. 外部読者に向けた包括的な解説や体系的な網羅を意図するものではなく, 自身の理解の定着と再参照を主眼に置いている.</p>
+      <p>自身の研究の基盤を明確にすることを目的とし, 必要最小限の範囲において記述を行う.</p>
+    </section>
+    <section>
+      <h2>計算量とは</h2>
+      <p>計算量 (Computational Complexity) とは, アルゴリズムの効率性を客観的に評価するための指標である. これは, アルゴリズムが問題を解くために必要な資源 (主に時間や空間) の量を, 入力サイズ n の関数として表現する. 計算量は, プログラムがどのくらい速く動作するか, どのくらいのメモリを使用するかを数学的に表現し, 異なるアルゴリズム同士を公平に比較するために用いられる. </p>
+      <h3>計算量の評価と漸近記法</h3>
+      <p>アルゴリズムの実行時間は, 特定の計算機環境やコンパイラに依存しないよう, アルゴリズムの実装とは独立に, 実行ステップ数 (計算機上での基本的な演算の回数) を基準に評価する必要がある. </p>
+      <p>計算量を記述する際には, 漸近記法, 特に <span class="bold marker-yellow">ビッグオー記法</span> ($O$ 記法, またはランダウの記号) が一般的に用いられる. $O$ 記法は, 入力サイズ $n$ が十分に大きいときの計算時間の増加の度合い (オーダー) を大まかに見積もる記法である. </p>
+      <p>$O$ 記法を用いる際のルールは以下の通りである. </p>
+      <ol class="enumerate">
+        <li>
+          <strong>最高次数の項以外は無視する</strong>:<br>
+          例えば, $2n^2 +5n+100$ の場合, $n$ が大きくなると $n^2$ の項が支配的になるため, $5n$ や $100$ などの低い次数の項は無視される.
+        </li>
+        <li><strong>定数倍の違いは無視する</strong>:<br>
+          例えば, $3n^2$ も $n^2$ もデータの増え方は同じであるため, 係数 3 は無視される.
+        </li>
+      </ol>
+      <p>したがって, 時間計算量 $T(n)=3n^2 +5n+100$ のアルゴリズムは, $O(n^2)$ と表記される. $O$ 記法は「<span class="bold marker-yellow">最大でも計算時間はこれくらい</span>」という漸近的な上界を示すため, アルゴリズムの最悪ケースの性能を見積もる際によく使用される.</p>
+    </section>
+    <section>
+      <h2>アルゴリズムの複雑性</h2>
+      <p>アルゴリズムの効率性を評価する上で, 計算量が <span class="bold marker-yellow">多項式関数</span> で抑えられるか, <span class="bold marker-yellow">指数関数</span> で増加するかどうかが, アルゴリズムが「効率的」であるか, 「非効率的」 (手に負えない) であるかを分ける決定的な境界線となっている.</p>
+
+      <h3>多項式時間アルゴリズム (Polynomial Time Algorithm)</h3>
+      <p>多項式時間アルゴリズムとは, その計算量が, 問題の入力サイズ $n$ に対して多項式関数 $O(n^k)$ ($k$ は任意の非負の定数) で表現されるオーダーに抑えられるアルゴリズムである. 特に, $k=1$ の場合は 線形時間アルゴリズム (Linear Time Algorithm) と呼ばれる. 入力サイズ $n$ が増加しても, 計算時間は比較的穏やかに増加するため, 「現実的に解ける問題」や「効率的なアルゴリズムが存在する問題」の指標とされている. </p>
+
+      <h3>指数時間アルゴリズム (Exponential Time Algorithm)</h3>
+      <p>指数時間アルゴリズムとは, その計算量が, 入力サイズ $n$ に対して指数関数 $O(c^n)$ ($c>1$ で表現されるオーダーに抑えられるアルゴリズムである. 入力サイズ $n$ が少し増加するだけで, 処理時間が爆発的に増加する (組み合わせ爆発) ため, 大規模な問題に対しては非現実的な計算時間を要する.</p>
+      <p>同様に, 非効率的なアルゴリズムとして, 階乗関数 $O(n!)$ で表現される階乗時間アルゴリズムも存在する.</p>
+
+      <table class="even-row-gray">
+        <caption>表1: 代表的な計算量の例</caption>
+        <tr>
+          <th>オーダー記法</th>
+          <th>効率性</th>
+          <th>代表的なアルゴリズムの例</th>
+        </tr>
+        <tr>
+          <td>$O(1)$</td>
+          <td>入力サイズに依存せず一定の時間で処理が完了する.</td>
+          <td>ハッシュテーブルのアクセス, 配列の特定インデックスへのアクセス</td>
+        </tr>
+        <tr>
+          <td>$O(\log n)$</td>
+          <td>入力サイズが増えても実行時間はわずかしか増加しない.</td>
+          <td>二分探索</td>
+        </tr>
+        <tr>
+          <td>$O(n)$</td>
+          <td>入力サイズ $n$ に比例して実行時間が増加する.</td>
+          <td>線形探索, 配列の走査</td>
+        </tr>
+        <tr>
+          <td>$O(n \log n)$</td>
+          <td>線形時間に近い効率的な増加. 実用上で非常に高速.</td>
+          <td>マージソート, ヒープソート, クイックソート (平均)</td>
+        </tr>
+        <tr>
+          <td>$O(n^2)$</td>
+          <td>入力サイズ $n$ の二乗に比例して実行時間が増加する.</td>
+          <td>バブルソート, 挿入ソート, 選択ソート, 二重ループ処理</td>
+        </tr>
+        <tr>
+          <td>$O(n^k)$ $(k \geq 1)$</td>
+          <td>入力サイズ $n$ の多項式で抑えられる. $k = 4$ 程度までは実用的といえる.</td>
+          <td>ワーシャル-フロイド法, 行列の乗算</td>
+        </tr>
+        <tr>
+          <td>$O(2^n)$</td>
+          <td>入力サイズ $n$ の増加に対して実行時間が爆発的に増加する.</td>
+          <td>巡回セールスマン問題の厳密解, 充足可能性問題</td>
+        </tr>
+        <tr>
+          <td>$O(n!)$</td>
+          <td>極めて非効率的であり, 現実的な時間では計算不可能.</td>
+          <td>巡回セールスマン問題の可能解の列挙</td>
+        </tr>
+      </table>
+
+      <div class="figure">
+        <img src="/img/blog/computational-complexity/compare_order.png" alt="figure" class="figure_image">
+        <p class="figure_caption">図1. 各計算量の比較</p>
+      </div>
+      <!-- <table class="even-row-gray">
+        <caption>表2: 計算量の比較 ([1])</caption>
+        <tr>
+          <td>計算量</td>
+          <td>$O(n)$</td>
+          <td>$O(n \log n)$</td>
+          <td>$O(n^2)$</td>
+          <td>$O(n^3)$</td>
+          <td>$O(2^n)$</td>
+          <td>$O(n!)$</td>
+        </tr>
+        <tr>
+          <td>$n = 10$</td>
+          <td>$10^{-7}$</td>
+          <td>$3.3 \times 10^{-7}$</td>
+          <td>$10^{-6}$</td>
+          <td>$10^{-5}$</td>
+          <td>$10^{-5}$</td>
+          <td>$0.036$ 秒</td>
+        </tr>
+        <tr>
+          <td>$15$</td>
+          <td>$1.5 \times 10^{-7}$</td>
+          <td>$0.6 \times 10^{-6}$</td>
+          <td>$2.3 \times 10^{-6}$</td>
+          <td>$0.3 \times 10^{-4}$</td>
+          <td>$3.3 \times 10^{-4}$</td>
+          <td>$3.6$ 時間</td>
+        </tr>
+        <tr>
+          <td>$20$</td>
+          <td>$2.0 \times 10^{-7}$</td>
+          <td>$0.8 \times 10^{-6}$</td>
+          <td>$0.4 \times 10^{-5}$</td>
+          <td>$0.8 \times 10^{-4}$</td>
+          <td>$1.1 \times 10^{-2}$</td>
+          <td>$772$ 年</td>
+        </tr>
+        <tr>
+          <td>$30$</td>
+          <td>$3.0 \times 10^{-7}$</td>
+          <td>$1.5 \times 10^{-6}$</td>
+          <td>$0.9 \times 10^{-5}$</td>
+          <td>$0.3 \times 10^{-3}$</td>
+          <td>$10.7$ 秒</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>$40$</td>
+          <td>$4.0 \times 10^{-7}$</td>
+          <td>$2.1 \times 10^{-6}$</td>
+          <td>$1.6 \times 10^{-5}$</td>
+          <td>$0.7 \times 10^{-3}$</td>
+          <td>$30.6$ 時間</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>$50$</td>
+          <td>$5.0 \times 10^{-7}$</td>
+          <td>$2.8 \times 10^{-6}$</td>
+          <td>$2.5 \times 10^{-5}$</td>
+          <td>$1.3 \times 10^{-3}$</td>
+          <td>$129$ 日</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>$100$</td>
+          <td>$10^{-6}$</td>
+          <td>$6.6 \times 10^{-6}$</td>
+          <td>$10^{-4}$</td>
+          <td>$0.01$ 秒</td>
+          <td>$4 \times 10^{14}$ 年</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>$500$</td>
+          <td>$5.0 \times 10^{-6}$</td>
+          <td>$4.5 \times 10^{-5}$</td>
+          <td>$2.5 \times 10^{-3}$</td>
+          <td>$1.25$ 秒</td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>$1,000$</td>
+          <td>$10^{-5}$</td>
+          <td>$0.1 \times 10^{-3}$</td>
+          <td>$10^{-2}$</td>
+          <td>$10$ 秒</td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>$5,000$</td>
+          <td>$5.0 \times 10^{-5}$</td>
+          <td>$0.6 \times 10^{-3}$</td>
+          <td>$0.25$ 秒</td>
+          <td>$20.8$ 分</td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>$10,000$</td>
+          <td>$10^{-4}$</td>
+          <td>$1.3 \times 10^{-3}$</td>
+          <td>$1.00$ 秒</td>
+          <td>$2.78$ 時間</td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>$50,000$</td>
+          <td>$5.0 \times 10^{-4}$</td>
+          <td>$8.0 \times 10^{-3}$</td>
+          <td>$25$ 秒</td>
+          <td>$14.4$ 日</td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>$10^5$</td>
+          <td>$10^{-3}$</td>
+          <td>$1.7 \times 10^{-2}$</td>
+          <td>$100$ 秒</td>
+          <td>$116$ 日</td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table> -->
+
+    </section>
+    <section>
+      <h2>その他の漸近的記法</h2>
+      <p>漸近記法には $O$ 記法の他にも, 下界やタイトな限界, さらには厳密な大小関係を示す記法が存在する. これらは総称してランダウの記号と呼ばれ, 計算機科学においてドナルド・クヌースによって体系化された</p>
+
+      <h3>$\Omega$ 記法 (Big Omega 記法)：漸近的な下界</h3>
+      <ul class="itemize">
+        <li><strong>意味</strong>: 計算量 $T(n)$ は, 比較対象の関数 $g(n)$ と同じか, それよりも大きい増加の度合いを持つ.</li>
+        <li><strong>定義</strong>: ある正の定数 $c$ と自然数 $n_0$ が存在し, すべての $n \geq n_0$ に対して $T(n) \geq c \cdot g(n)$ が成り立つときに, $T(n) = \Omega(g(n))$ と表記する.</li>
+        <li><strong>実用</strong>: これは, 「<span class="marker-yellow">どれだけ理想的な入力が来ても計算時間はこれ以上早くならない</span>」という, アルゴリズムの最良ケースの性能や問題の固有の難しさ（計算量の下限）を見積もるために用いられる.</li>
+      </ul>
+
+      <h3>$\Theta$ 記法（Big Theta 記法）：漸近的にタイトな限界</h3>
+      <ul class="itemize">
+        <li><strong>意味</strong>: 計算量 $T(n)$ は, 比較対象の関数 $g(n)$ と本質的に同じ増加の度合いを持つ.</li>
+        <li><strong>定義</strong>: ある正の定数 $c_1, c_2$ と自然数 $n_0$ が存在し, すべての $n \geq n_0$ に対して $c_1 \cdot g(n) \leq T(n) \leq c_2 \cdot g(n)$ が成り立つときに, $T(n) = \Theta(g(n))$ と表記する.</li>
+        <li><strong>実用</strong>: これは, $T(n)=O(g(n))$ かつ $T(n)=\Omega(g(n))$ の両方が成り立つことを意味する.</li>
+      </ul>
+
+      <h3>$o$ 記法（Little o 記法）：漸近的にタイトでない上界</h3>
+      <ul class="itemize">
+        <li><strong>意味</strong>: 計算量 $T(n)$ は, 比較対象の関数 $g(n)$ よりも増加の度合いが厳密に小さい.</li>
+        <li><strong>定義</strong>: 任意の正の定数 $c$ に対して, ある自然数 $n_0$ が存在し, すべての $n \geq n_0$ に対して $T(n) < c \cdot g(n)$ が成り立つときに, $T(n) = o(g(n))$ と表記する.</li>
+        <li><strong>実用</strong>: これは, 極限において $T(n)/g(n)$ が $0$ に収束することと同値であり,「<span class="marker-yellow">計算量はこの関数よりも明確に小さい</span>」ことを示すために用いられる. </li>
+      </ul>
+      <p>例として, $3x^2 +4x+10$ は $x^3$ と比べると小さくなるため, $3x^2 +4x+10=o(x^3)$ と表せる.</p>
+
+      <h3>$\omega$ 記法（Little omega 記法）：漸近的にタイトでない下界</h3>
+      <ul class="itemize">
+        <li><strong>意味</strong>: 計算量 $T(n)$ は, 比較対象の関数 $g(n)$ よりも増加の度合いが厳密に大きい.</li>
+        <li><strong>定義</strong>: 任意の正の定数 $c$ に対して, ある自然数 $n_0$ が存在し, すべての $n \geq n_0$ に対して $T(n) > c \cdot g(n)$ が成り立つときに, $T(n) = \omega(g(n))$ と表記する.</li>
+        <li><strong>実用</strong>: これは, 極限において $T(n)/g(n)$ が $\infty$ に発散することと同値であり,「<span class="marker-yellow">計算量はこの関数よりも明確に大きい</span>」ことを示すために用いられる.</li>
+      </ul>
+
+    <table class="even-row-gray">
+      <caption>表2: 漸近的記法のまとめ</caption>
+      <tr>
+        <th>記法</th>
+        <th>評価対象</th>
+        <th>直感的な意味</th>
+        <th>数学的な関係</th>
+        <th>漸近的性質</th>
+      </tr>
+      <tr>
+        <td>$O(g(n))$</td>
+        <td>上界</td>
+        <td>$T(n)$ は $g(n)$ と同じか小さい。</td>
+        <td>$T(n) \leq g(n)$</td>
+        <td>最悪ケースの性能を保証する</td>
+      </tr>
+      <tr>
+        <td>$\Omega(g(n))$</td>
+        <td>下界</td>
+        <td>$T(n)$ は $g(n)$ と同じか大きい。</td>
+        <td>$T(n) \geq g(n)$</td>
+        <td>最良ケースの性能を保証する。</td>
+      </tr>
+      <tr>
+        <td>$\Theta(g(n))$</td>
+        <td>タイトな限界</td>
+        <td>$T(n)$ は $g(n)$ と同じ。</td>
+        <td>$T(n) = g(n)$</td>
+        <td>$O$ と $\Omega$ の両方を満たす最も厳密な表現</td>
+      </tr>
+      <tr>
+        <td>$o(g(n))$</td>
+        <td>タイトでない上界</td>
+        <td>$T(n)$ は $g(n)$ より小さい。</td>
+        <td>$T(n) < g(n)$</td>
+        <td>$T(n)$ は $g(n)$ に比べて相対的に無限小に近づく。</td>
+      </tr>
+      <tr>
+        <td>$ω(g(n))$</td>
+        <td>タイトでない下界</td>
+        <td>$T(n)$ は $g(n)$ より大きい。</td>
+        <td>$T(n) > g(n)$</td>
+        <td>$T(n)$ は $g(n)$ に比べて相対的に無限大に近づく。</td>
+      </tr>
+    </table>
+    </section>
+  </main>
+  <footer></footer>
+  <script src="/js/header.js"></script>
+</body>
+</html>

@@ -5,15 +5,15 @@ p {
     line-height: 1.8;
 }
 
-.itemize {
+.itemize, .enumerate {
     margin: 10px 0 10px 2.5em;
 }
 
-.itemize strong {
+.itemize strong, .enumerate strong {
     border-bottom: solid 1px #262628;
 }
 
-.itemize li {
+.itemize li, .enumerate li {
     line-height: 1.8;
     margin: 4px 0;
 }
@@ -82,6 +82,10 @@ p {
     width: 87%;
     overflow-x: auto;
     overflow-y: hidden;
+}
+
+table {
+    margin: 8px auto;
 }
 
 @media (max-width: 600px) {
