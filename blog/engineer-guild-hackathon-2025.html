@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="/css/global.css">
   <link rel="stylesheet" href="/css/header.css">
   <link rel="stylesheet" href="/css/blog.css">
+  <link rel="stylesheet" href="/css/link.css">
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -33,9 +34,9 @@
   {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
-    "headline": "Engineer Guild Hackathon で3位を受賞した話",
-    "datePublished": "2025-10-21",
-    "dateUpdated": "2025-10-21",
+    "headline": "Engineer Guild Hackathon 2025 で3位を受賞した話",
+    "datePublished": "2025-12-28",
+    "dateUpdated": "2025-12-28",
     "author": {
       "@type": "Person",
       "name": "IZUMI Tomonari"
@@ -79,13 +80,166 @@
   </header>
 
   <main id="main">
-    <h1>Engineer Guild Hackathon に参加して</h1>
-    <p>作成日: 2025年11月22日, 最終更新日: 2025年11月22日</p>
+    <h1>Engineer Guild Hackathon 2025 で3位を受賞した話</h1>
+    <p>作成日: 2025年12月28日、最終更新日: 2025年12月28日</p>
     <section>
       <h2>はじめに</h2>
-      <p>今回は, 2025年9月に参加した Engineer Guild Hackathon での体験を語ります.</p>
+      <p>2025年4月に釧路高専から北海道大学大学院へ進学し、新しい友人を作ることを目的に「<a href="https://www.instagram.com/cuisinecookingdiary/">北大系料理サークル</a>」に入部しました。そこである日、同じ調理班になったメンバー全員が偶然にも北海道大学の情報系の学部生で、自然と意気投合。その後、メンバーから「<span class="bold marker-yellow">ハッカソンに出場したいが、バックエンドを担当できる人がいない</span>」という話を聞き、私がバックエンドを担当できることから「<span class="bold marker-yellow">一緒に出場しませんか？</span>」と提案したことが、本大会に参加するきっかけとなりました。</p>
+      <p>今回は、2025年9月に参加した Engineer Guild Hackathon 2025 での開発話や体験談を語ります。</p>
+      <div class="figure">
+        <img src="/img/blog/engineer-guild-hackathon-2025/team12-egh-2025.png" alt="EGH2025 概要" class="blog_image">
+        <p class="figure_caption">図1. チーム12 API (アジフライ・パセリ・イカリング) 集合写真</p>
+      </div>
+
+      <h3>開発リポジトリ</h3>
+      <li class="link-item">
+          <a href="https://github.com/Engineer-Guild-Hackathon/team-12-app">
+            <p class="title">Engineer-Guild-Hackathon/team-12-app</p>
+            <p class="description">Engineer Guild Hackathon 2025 3位受賞｜holo (ホロ) - 道端に光る「どうして？」を 見つけにいこう。 AIカメラと問いで作る 新しい散歩地図。</p>
+            <div class="link">
+              <img src="https://www.google.com/s2/favicons?sz=32&domain=github.com" alt="favicon" class="favicon">
+              <p>https://github.com/Engineer-Guild-Hackathon/team-12-app</p>
+            </div>
+          </a>
+        </li>
     </section>
     <section>
+      <h2>チームメンバーの役割分担</h2>
+      <div class="two-columns">
+        <div>
+          <h3>フロントエンド</h3>
+          <ul class="itemize">
+            <li>
+              <a href="https://github.com/uta1018" class="bold" style="color:#ED712E">@uta1018</a> (北海道大学 B4)：チーム総括
+              <ul class="itemize">
+                <li>フロントエンド開発リーダー</li>
+                <li>予選プレゼン発表</li>
+                <li>決勝プレゼン発表 (ペルソナ、機能紹介、デモ、注目機能)</li>
+                <li>UI・UXデザイン (Figma)</li>
+                <li>フロントエンドアプリ開発 (Next.js)</li>
+              </ul>
+            </li>
+            <li>
+              <a href="https://github.com/maiyu-u" class="bold" style="color:#ED712E">@maiyu-u</a> (北海道大学 B4)：
+              <ul class="itemize">
+                <li>UI・UXデザイン (Figma)</li>
+                <li>フロントエンドアプリ開発 (Next.js)</li>
+              </ul>
+            </li>
+            <li>
+              <a href="https://github.com/CShoku" class="bold" style="color:#ED712E">@CShoku</a> (北海道大学 B3)：
+              <ul class="itemize">
+                <li>バックエンドとの統合 + テスト</li>
+              </ul>
+            </li>
+            <li>
+              <span class="bold marker-yellow"><a href="https://github.com/Tomopu" class="bold" style="color:#ED712E">@Tomopu (私)</a> (北海道大学 M1)</span>：
+              <ul class="itemize">
+                <li>リバースプロキシの開発</li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <h3>バックエンド</h3>
+          <ul class="itemize">
+            <li>
+              <span class="bold marker-yellow"><a href="https://github.com/Tomopu" class="bold" style="color:#ED712E">@Tomopu (私)</a> (北海道大学 M1)</span>：
+              <ul class="itemize">
+                <li>バックエンド開発リーダー (開発方法指導)</li>
+                <li>決勝プレゼン発表 (技術選定、将来性、PoC)</li>
+                <li>開発環境構築 (Dev Container)</li>
+                <li>環境構築・リポジトリ運営等ドキュメント作成</li>
+                <li>Google Cloud デプロイ + DBサーバー管理</li>
+                <li>投稿関係APIの開発、テストコードの作成</li>
+              </ul>
+            </li>
+            <li>
+              <a href="https://github.com/shimmen3141" class="bold" style="color:#ED712E">@shimmen3141</a> (北海道大学 B4)：
+              <ul class="itemize">
+                <li>画像関係APIの開発</li>
+                <li>検索機能機能の開発 (Vertex AI Search)</li>
+              </ul>
+            </li>
+            <li>
+              <a href="https://github.com/CShoku" class="bold" style="color:#ED712E">@CShoku</a> (北海道大学 B3)：
+              <ul class="itemize">
+                <li>Next.js の CI環境の構築</li>
+                <li>Gemini API (画像解析)の開発</li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <section>
+      <h2>ハッカソンの概要</h2>
+      <h3>テーマ：「最高のエンジニアは誰だ？それを決めようじゃないか。」</h3>
+      <p>Engineer Guild Hackathon (EGH) は、外資就活ドットコムが主催する、<span class="bold marker-yellow">2週間で「技術選定・開発力・ユーザー体験」を競うハッカソン</span>です。今大会は4回目の開催で、延べ46チームが参加しました。</p>
+
+      <div class="figure">
+        <img src="/img/blog/engineer-guild-hackathon-2025/egh2025.png" alt="EGH2025 概要" class="blog_image">
+        <p class="figure_caption">図2. Engineer Guild Hackathon 2025 (<a href="https://gaishishukatsu.com/">©︎外資就活ドットコム</a>)</p>
+      </div>
+
+      <p>キックオフは 9/6(土) にオンラインで実施され、発表された「お題」をもとに、予選発表までの一週間、プロダクトの構想からデモアプリの開発を行いました。予選発表では全チームが3グループに分かれ、<span class="bold marker-yellow">各チーム7分</span>の発表をします。審査の結果、各グループから上位5チーム、計15チームが決勝に進出し、残りの1週間でプロダクトのさらなるブラッシュアップを行います。</p>
+      <p>決勝発表は 9/20(土) にアークヒルズクラブ (東京都港区赤坂) にて対面で実施され、<span class="bold marker-yellow">各チーム15分</span>の持ち時間で「プレゼン + デモ」の発表を行いました。審査員はAtCoder、M3、日本マイクロソフトなどの名だたるIT企業から参加し、<span class="bold marker-yellow">「実用性」「創造性」「ユーザビリティ」「技術的挑戦」「将来性」「完成度」「プレゼンテーション」</span>の7項目において評価が行われました。</p>
+
+      <table class="odd-row-gray fixed-header-width">
+        <caption>表1. Engineer Guild Hackathon 2025 概要</caption>
+        <tr>
+          <th>主催</th>
+          <td>外資就活ドットコム (株式会社ハウテレビジョン)</td>
+        </tr>
+        <tr>
+          <th>期間</th>
+          <td>9/6(土) ~ 9/20(土) 2週間</td>
+        </tr>
+        <tr>
+          <th>参加チーム数</th>
+          <td>46チーム (即席チームを含める)</td>
+        </tr>
+        <tr>
+          <th>予選</th>
+          <td>9/13(土) @Zoom (46チーム → 15チームが通過)</td>
+        </tr>
+        <tr>
+          <th>決勝</th>
+          <td>9/20(土) @アークヒルズクラブ (東京都港区赤坂)</td>
+        </tr>
+        <tr>
+          <th>賞金</th>
+          <td>1位: 100万円、2位: 25万円、3位: 5万円</td>
+        </tr>
+        <tr>
+          <th>審査員 (敬称略)</th>
+          <td>AtCoder、M3、日本マイクロソフト、アトラエ、ジーニー、ハウテレビジョン、Finatext、レスシステムソリューションズ、イオンスマートテクノロジー、他</td>
+        </tr>
+      </table>
+    </section>
+    <section>
+      <h2>EGH2025のお題</h2>
+      <h3>お題：<span class="bold marker-yellow">「テクノロジーで、「学び」の体験を変える」</span></h3>
+
+      <p>今回のお題はいわゆる「EdTech」に関するものでした。この領域は、社会的意義は大きいものの、「ICTリテラシー格差」や「顧客が価格に敏感」など、ビジネス化の難易度が高く、利用継続率・教育効果の定量化が課題となります。</p>
+      <p>「難易度が高い分、残された課題が多いからこそ、イノベーションの余地が大きい」と審査員の方はおっしゃっていました。</p>
+    </section>
+    <section>
+      <h2>審査基準</h2>
+      <p>各項目10点満点 (計70点満点)で、各審査員が70点ずつ持っています。</p>
+      <ol class="enumerate">
+        <li><strong>実用性</strong>：提案されたプロダクトが実際にユーザーに役立つか。</li>
+        <li><strong>創造性</strong>：アウトプットに独創的なアイデアや新しいアプローチがどれだけ反映されているか.</li>
+        <li><strong>ユーザビリティ</strong>：ユーザーが直感的に使える<span class="bold marker-yellow">デザインと機能性</span>を持っているか。</li>
+        <li><strong>技術的挑戦</strong>：プロダクト開発において使用した<span class="bold marker-yellow">技術が適切に選定</span>されているか。 <span class="bold marker-yellow">新しい技術</span>や手法に挑戦しているか。</li>
+        <li><strong>将来性</strong>：プロダクトの価値をさらに高める中長期的なグロース構想 (追加するべき機能や<span class="bold marker-yellow">収益性</span>など)をどこまで描けているか。</li>
+        <li><strong>完成度</strong>：提案されたプロダクトの<span class="bold marker-yellow">完成度</span>や<span class="bold marker-yellow">動作するプロトタイプ</span>の品質。発表時にはデモの紹介も行って欲しい。</li>
+        <li><strong>プレゼンテーション</strong>：チームのプレゼンテーションが、プロダクトの魅力や価値をしっかりと伝えられているかどうか。</li>
+      </ol>
+    </section>
+    <section>
+      <h2>チームでのアイデア出し</h2>
+      
     </section>
   </main>
   <footer></footer>

@@ -110,7 +110,26 @@ tr td:nth-child(2) {
     background-color: #f1f1f1;
 }
 
+.odd-row-gray tr:nth-child(odd) {
+    background-color: #f1f1f1;
+}
+
+.fixed-header-width th {
+    white-space: nowrap;
+}
+
+.two-columns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
+
 @media screen and (max-width: 768px) {
+    .two-columns {
+        grid-template-columns: 1fr;
+    }
+
     main {
         width: 95%;
     }
