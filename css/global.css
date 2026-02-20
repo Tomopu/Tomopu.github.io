@@ -125,6 +125,50 @@ tr td:nth-child(2) {
 }
 
 
+.accordion {
+    max-width: 100%;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin: 20px 0 10px 0;
+    overflow: hidden;
+}
+
+.accordion-header {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    background-color: #f7f7f7;
+    font-weight: bold;
+    cursor: pointer;
+    list-style: none; /* デフォルトの黒い三角形を消す */
+}
+
+.accordion-header:hover {
+    background-color: #f1f1f1;
+}
+
+.accordion-header::before {
+    content: "";
+    width: 8px;
+    height: 8px;
+    margin-right: 15px; /* タイトルとの余白 */
+    border-right: 2px solid #333;
+    border-bottom: 2px solid #333;
+    transform: rotate(-45deg); /* 右向き（＞） */
+    transition: transform 0.3s ease;
+}
+
+.accordion[open] .accordion-header::before {
+    transform: rotate(45deg); /* 下向き（∨）に回転 */
+}
+
+.accordion-content {
+    padding: 20px;
+    border-top: 1px solid #ddd;
+    background-color: #fff;
+}
+
+
 @media screen and (max-width: 768px) {
     .two-columns {
         grid-template-columns: 1fr;
