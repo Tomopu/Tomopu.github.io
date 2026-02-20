@@ -84,27 +84,111 @@
     <p>作成日: 2025年12月28日、最終更新日: 2025年12月28日</p>
     <section>
       <h2>はじめに</h2>
-      <p>2025年4月に釧路高専から北海道大学大学院へ進学し、新しい友人を作ることを目的に「<a href="https://www.instagram.com/cuisinecookingdiary/">北大系料理サークル</a>」に入部しました。そこである日、同じ調理班になったメンバー全員が偶然にも北海道大学の情報系の学部生で、自然と意気投合。その後、メンバーから「<span class="bold marker-yellow">ハッカソンに出場したいが、バックエンドを担当できる人がいない</span>」という話を聞き、私がバックエンドを担当できることから「<span class="bold marker-yellow">一緒に出場しませんか？</span>」と提案したことが、本大会に参加するきっかけとなりました。</p>
-      <p>今回は、2025年9月に参加した Engineer Guild Hackathon 2025 での開発話や体験談を語ります。</p>
+      <p>今更ながら、去年の9月に参加した <span class="bold marker-yellow">Engineer Guild Hackathon (EGH) 2025</span> で3位を受賞した話 を書き残しておこうと思います。</p>
       <div class="figure">
         <img src="/img/blog/engineer-guild-hackathon-2025/team12-egh-2025.png" alt="EGH2025 概要" class="blog_image">
         <p class="figure_caption">図1. チーム12 API (アジフライ・パセリ・イカリング) 集合写真</p>
       </div>
+      <details class="accordion">
+        <summary class="accordion-header">
+          参加したハッカソンについて
+        </summary>
+        <div class="accordion-content">
+          <h2>ハッカソンの概要</h2>
+          <h3>テーマ：「最高のエンジニアは誰だ？それを決めようじゃないか。」</h3>
+          <p>Engineer Guild Hackathon (EGH) は、外資就活ドットコムが主催する、<span class="bold marker-yellow">2週間で「技術選定・開発力・ユーザー体験」を競うハッカソン</span>です。今大会は4回目の開催で、延べ46チームが参加しました。</p>
 
+          <div class="figure">
+            <img src="/img/blog/engineer-guild-hackathon-2025/egh2025.png" alt="EGH2025 概要" class="blog_image">
+            <p class="figure_caption">図2. Engineer Guild Hackathon 2025 (<a href="https://gaishishukatsu.com/">©︎外資就活ドットコム</a>)</p>
+          </div>
+
+          <p>キックオフは 9/6(土) にオンラインで実施され、発表された「お題」をもとに、予選発表までの一週間、プロダクトの構想からデモアプリの開発を行いました。予選発表では全チームが3グループに分かれ、<span class="bold marker-yellow">各チーム7分</span>の発表をします。審査の結果、各グループから上位5チーム、計15チームが決勝に進出し、残りの1週間でプロダクトのさらなるブラッシュアップを行います。</p>
+          <p>決勝発表は 9/20(土) にアークヒルズクラブ (東京都港区赤坂) にて対面で実施され、<span class="bold marker-yellow">各チーム15分</span>の持ち時間で「プレゼン + デモ」の発表を行いました。審査員はAtCoder、M3、日本マイクロソフトなどの名だたるIT企業から参加し、<span class="bold marker-yellow">「実用性」「創造性」「ユーザビリティ」「技術的挑戦」「将来性」「完成度」「プレゼンテーション」</span>の7項目において評価が行われました。</p>
+
+          <table class="odd-row-gray fixed-header-width">
+            <caption>表1. Engineer Guild Hackathon 2025 概要</caption>
+            <tr>
+              <th>主催</th>
+              <td>外資就活ドットコム (株式会社ハウテレビジョン)</td>
+            </tr>
+            <tr>
+              <th>期間</th>
+              <td>9/6(土) ~ 9/20(土) 2週間</td>
+            </tr>
+            <tr>
+              <th>参加チーム数</th>
+              <td>46チーム (即席チームを含める)</td>
+            </tr>
+            <tr>
+              <th>予選</th>
+              <td>9/13(土) @Zoom (46チーム → 15チームが通過)</td>
+            </tr>
+            <tr>
+              <th>決勝</th>
+              <td>9/20(土) @アークヒルズクラブ (東京都港区赤坂)</td>
+            </tr>
+            <tr>
+              <th>賞金</th>
+              <td>1位: 100万円、2位: 25万円、3位: 5万円</td>
+            </tr>
+            <tr>
+              <th>審査員 (敬称略)</th>
+              <td>AtCoder、M3、日本マイクロソフト、アトラエ、ジーニー、ハウテレビジョン、Finatext、レスシステムソリューションズ、イオンスマートテクノロジー、他</td>
+            </tr>
+          </table>
+          <h2>審査基準</h2>
+          <p>各項目10点満点 (計70点満点)で、各審査員が70点ずつ持っています。</p>
+          <ol class="enumerate">
+            <li><strong>実用性</strong>：提案されたプロダクトが実際にユーザーに役立つか。</li>
+            <li><strong>創造性</strong>：アウトプットに独創的なアイデアや新しいアプローチがどれだけ反映されているか.</li>
+            <li><strong>ユーザビリティ</strong>：ユーザーが直感的に使える<span class="bold marker-yellow">デザインと機能性</span>を持っているか。</li>
+            <li><strong>技術的挑戦</strong>：プロダクト開発において使用した<span class="bold marker-yellow">技術が適切に選定</span>されているか。 <span class="bold marker-yellow">新しい技術</span>や手法に挑戦しているか。</li>
+            <li><strong>将来性</strong>：プロダクトの価値をさらに高める中長期的なグロース構想 (追加するべき機能や<span class="bold marker-yellow">収益性</span>など)をどこまで描けているか。</li>
+            <li><strong>完成度</strong>：提案されたプロダクトの<span class="bold marker-yellow">完成度</span>や<span class="bold marker-yellow">動作するプロトタイプ</span>の品質。発表時にはデモの紹介も行って欲しい。</li>
+            <li><strong>プレゼンテーション</strong>：チームのプレゼンテーションが、プロダクトの魅力や価値をしっかりと伝えられているかどうか。</li>
+          </ol>
+        </div>
+      </details>
+    </section>
+
+    <section>
+      <h2>EGH2025のお題</h2>
+      <h3>お題：<span class="bold marker-yellow">「テクノロジーで、「学び」の体験を変える」</span></h3>
+
+      <p>今回のお題はいわゆる「EdTech」に関するものでした。この領域は、社会的意義は大きいものの、「ICTリテラシー格差」や「顧客が価格に敏感」など、ビジネス化の難易度が高く、利用継続率・教育効果の定量化が課題となります。</p>
+      <p>「難易度が高い分、残された課題が多いからこそ、イノベーションの余地が大きい」と審査員の方はおっしゃっていました。</p>
+
+      <h3>過去のお題：</h3>
+      <p>2025年3⽉：「テクノロジーを使って、⽣活のコマッタを解決」</p>
+      <p>2024年11⽉：「テクノロジーを使って、インバウンド観光客（外国⼈観光客）の体験を最⾼に」</p>
+      <p>2024年9⽉：「⼤学⽣が⽇常⽣活で困っていること・こんなのあったらいいなあを解決するプロダクト」</p>
+    </section>
+
+    <section>
+      <h2>プロダクトの紹介</h2>
+      <p>私たちが開発したのは、道端の「どうして？」をAIカメラと問いで紐解く散歩地図アプリ「holo（ホロ）」です。</p>
+      <p>アーキテクチャ設計にはかなりこだわりました。GCPを用いたクラウドアーキテクチャは、自分でもかなり良い感じに組めたと自負しています。フロントエンドはNext.js、バックエンドはFlaskを採用しました。</p>
+      <div class="figure">
+        <img src="/img/blog/engineer-guild-hackathon-2025/holo_architecture.png" alt="holo アーキテクチャ" class="blog_image">
+        <p class="figure_caption">図3. holo アーキテクチャ</p>
+      </div>
       <h3>開発リポジトリ</h3>
       <li class="link-item">
-          <a href="https://github.com/Engineer-Guild-Hackathon/team-12-app">
-            <p class="title">Engineer-Guild-Hackathon/team-12-app</p>
-            <p class="description">Engineer Guild Hackathon 2025 3位受賞｜holo (ホロ) - 道端に光る「どうして？」を 見つけにいこう。 AIカメラと問いで作る 新しい散歩地図。</p>
-            <div class="link">
-              <img src="https://www.google.com/s2/favicons?sz=32&domain=github.com" alt="favicon" class="favicon">
-              <p>https://github.com/Engineer-Guild-Hackathon/team-12-app</p>
-            </div>
-          </a>
-        </li>
+        <a href="https://github.com/Engineer-Guild-Hackathon/team-12-app">
+          <p class="title">Engineer-Guild-Hackathon/team-12-app</p>
+          <p class="description">Engineer Guild Hackathon 2025 3位受賞｜holo (ホロ) - 道端に光る「どうして？」を 見つけにいこう。 AIカメラと問いで作る 新しい散歩地図。</p>
+          <div class="link">
+            <img src="https://www.google.com/s2/favicons?sz=32&domain=github.com" alt="favicon" class="favicon">
+            <p>https://github.com/Engineer-Guild-Hackathon/team-12-app</p>
+          </div>
+        </a>
+      </li>
     </section>
+
     <section>
       <h2>チームメンバーの役割分担</h2>
+      <p>2025年4月に釧路高専から北海道大学大学院へ進学し、新しい友人を作ることを目的に「<a href="https://www.instagram.com/cuisinecookingdiary/">北大系料理サークル</a>」に入部しました。そこである日、同じ調理班になったメンバー全員が偶然にも北海道大学の情報系の学部生で、自然と意気投合。その後、メンバーから「<span class="bold marker-yellow">ハッカソンに出場したいが、バックエンドを担当できる人がいない</span>」という話を聞き、私がバックエンドを担当できることから「<span class="bold marker-yellow">一緒に出場しませんか？</span>」と提案したことが、本大会に参加するきっかけとなりました。</p>
       <div class="two-columns">
         <div>
           <h3>フロントエンド</h3>
@@ -170,87 +254,6 @@
             </li>
           </ul>
         </div>
-      </div>
-    </section>
-    <section>
-      <h2>ハッカソンの概要</h2>
-      <h3>テーマ：「最高のエンジニアは誰だ？それを決めようじゃないか。」</h3>
-      <p>Engineer Guild Hackathon (EGH) は、外資就活ドットコムが主催する、<span class="bold marker-yellow">2週間で「技術選定・開発力・ユーザー体験」を競うハッカソン</span>です。今大会は4回目の開催で、延べ46チームが参加しました。</p>
-
-      <div class="figure">
-        <img src="/img/blog/engineer-guild-hackathon-2025/egh2025.png" alt="EGH2025 概要" class="blog_image">
-        <p class="figure_caption">図2. Engineer Guild Hackathon 2025 (<a href="https://gaishishukatsu.com/">©︎外資就活ドットコム</a>)</p>
-      </div>
-
-      <p>キックオフは 9/6(土) にオンラインで実施され、発表された「お題」をもとに、予選発表までの一週間、プロダクトの構想からデモアプリの開発を行いました。予選発表では全チームが3グループに分かれ、<span class="bold marker-yellow">各チーム7分</span>の発表をします。審査の結果、各グループから上位5チーム、計15チームが決勝に進出し、残りの1週間でプロダクトのさらなるブラッシュアップを行います。</p>
-      <p>決勝発表は 9/20(土) にアークヒルズクラブ (東京都港区赤坂) にて対面で実施され、<span class="bold marker-yellow">各チーム15分</span>の持ち時間で「プレゼン + デモ」の発表を行いました。審査員はAtCoder、M3、日本マイクロソフトなどの名だたるIT企業から参加し、<span class="bold marker-yellow">「実用性」「創造性」「ユーザビリティ」「技術的挑戦」「将来性」「完成度」「プレゼンテーション」</span>の7項目において評価が行われました。</p>
-
-      <table class="odd-row-gray fixed-header-width">
-        <caption>表1. Engineer Guild Hackathon 2025 概要</caption>
-        <tr>
-          <th>主催</th>
-          <td>外資就活ドットコム (株式会社ハウテレビジョン)</td>
-        </tr>
-        <tr>
-          <th>期間</th>
-          <td>9/6(土) ~ 9/20(土) 2週間</td>
-        </tr>
-        <tr>
-          <th>参加チーム数</th>
-          <td>46チーム (即席チームを含める)</td>
-        </tr>
-        <tr>
-          <th>予選</th>
-          <td>9/13(土) @Zoom (46チーム → 15チームが通過)</td>
-        </tr>
-        <tr>
-          <th>決勝</th>
-          <td>9/20(土) @アークヒルズクラブ (東京都港区赤坂)</td>
-        </tr>
-        <tr>
-          <th>賞金</th>
-          <td>1位: 100万円、2位: 25万円、3位: 5万円</td>
-        </tr>
-        <tr>
-          <th>審査員 (敬称略)</th>
-          <td>AtCoder、M3、日本マイクロソフト、アトラエ、ジーニー、ハウテレビジョン、Finatext、レスシステムソリューションズ、イオンスマートテクノロジー、他</td>
-        </tr>
-      </table>
-    </section>
-    <section>
-      <h2>EGH2025のお題</h2>
-      <h3>お題：<span class="bold marker-yellow">「テクノロジーで、「学び」の体験を変える」</span></h3>
-
-      <p>今回のお題はいわゆる「EdTech」に関するものでした。この領域は、社会的意義は大きいものの、「ICTリテラシー格差」や「顧客が価格に敏感」など、ビジネス化の難易度が高く、利用継続率・教育効果の定量化が課題となります。</p>
-      <p>「難易度が高い分、残された課題が多いからこそ、イノベーションの余地が大きい」と審査員の方はおっしゃっていました。</p>
-
-      <h3>過去のお題：</h3>
-      <p>2025年3⽉：「テクノロジーを使って、⽣活のコマッタを解決」</p>
-      <p>2024年11⽉：「テクノロジーを使って、インバウンド観光客（外国⼈観光客）の体験を最⾼に」</p>
-      <p>2024年9⽉：「⼤学⽣が⽇常⽣活で困っていること・こんなのあったらいいなあを解決するプロダクト」</p>
-    </section>
-    <section>
-      <h2>審査基準</h2>
-      <p>各項目10点満点 (計70点満点)で、各審査員が70点ずつ持っています。</p>
-      <ol class="enumerate">
-        <li><strong>実用性</strong>：提案されたプロダクトが実際にユーザーに役立つか。</li>
-        <li><strong>創造性</strong>：アウトプットに独創的なアイデアや新しいアプローチがどれだけ反映されているか.</li>
-        <li><strong>ユーザビリティ</strong>：ユーザーが直感的に使える<span class="bold marker-yellow">デザインと機能性</span>を持っているか。</li>
-        <li><strong>技術的挑戦</strong>：プロダクト開発において使用した<span class="bold marker-yellow">技術が適切に選定</span>されているか。 <span class="bold marker-yellow">新しい技術</span>や手法に挑戦しているか。</li>
-        <li><strong>将来性</strong>：プロダクトの価値をさらに高める中長期的なグロース構想 (追加するべき機能や<span class="bold marker-yellow">収益性</span>など)をどこまで描けているか。</li>
-        <li><strong>完成度</strong>：提案されたプロダクトの<span class="bold marker-yellow">完成度</span>や<span class="bold marker-yellow">動作するプロトタイプ</span>の品質。発表時にはデモの紹介も行って欲しい。</li>
-        <li><strong>プレゼンテーション</strong>：チームのプレゼンテーションが、プロダクトの魅力や価値をしっかりと伝えられているかどうか。</li>
-      </ol>
-    </section>
-    <section>
-      <h2>チームでのアイデア出し</h2>
-      <p>ハッカソンで一番重要かつ大変なのがアイデア出しです。どんなに良いプログラムやデモアプリを作れたとしても、土台がしっかりしていなければ開発意義もなければ受賞もできません。</p>
-      <p>我々は、キックオフが行われた9/6(土)から9/8(月)の3日間、アイデアだしとプロダクト構想に時間を費やしました。</p>
-      <p>課題発見のためのブレインストーミングやMECE・ロジックツリーといったフレームワークを用いて、まずはアイデア出しを行います。ブレインストーミングには<a href="https://hidane.app" >hidane</a>というWEBアプリを使うと便利でした (図3)。このアプリは未踏プロジェクトで若手の2人によって作成されたもののようです (<a href="https://spectrumtokyo.com/jp/interviews/brainstorming-tool-hidane" >開発秘話はこちら</a>)。また、ロジックツリーは <a href="https://www.figma.com/" >Figma</a>のコラボ機能を使って行いました (図4)。</p>
-
-      <div class="figure">
-        <img src="/img/blog/engineer-guild-hackathon-2025/team12-brainstorming.png" alt="ブレインストーミングの様子" class="blog_image">
-        <p class="figure_caption">図3. <a href="https://hidane.app" >hidane</a> (左) と <a href="https://www.figma.com/">Figma</a> (右) を使ったブレインストーミングの様子</p>
       </div>
     </section>
   </main>
