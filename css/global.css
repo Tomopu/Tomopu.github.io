@@ -36,6 +36,10 @@ h2 {
     width: fit-content;
 }
 
+h3 {
+    font-size: 20px;
+}
+
 a {
     cursor: pointer;
 }
@@ -124,6 +128,14 @@ tr td:nth-child(2) {
     gap: 16px;
 }
 
+.figure {
+    text-align: center;
+    margin: 16px 0;
+}
+
+.figure img{
+    max-width: 600px;
+}
 
 .accordion {
     max-width: 100%;
@@ -169,12 +181,16 @@ tr td:nth-child(2) {
 }
 
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 600px) {
+    main {
+        width: 95%;
+    }
+
     .two-columns {
         grid-template-columns: 1fr;
     }
 
-    main {
-        width: 95%;
+    .figure img {
+        width: 100%;
     }
 }

@@ -168,11 +168,117 @@
     <section>
       <h2>プロダクトの紹介</h2>
       <p>私たちが開発したのは、道端の「どうして？」をAIカメラと問いで紐解く散歩地図アプリ「holo（ホロ）」です。</p>
-      <p>アーキテクチャ設計にはかなりこだわりました。GCPを用いたクラウドアーキテクチャは、自分でもかなり良い感じに組めたと自負しています。フロントエンドはNext.js、バックエンドはFlaskを採用しました。</p>
+
+      <h3>主な機能</h3>
+      <div class="showcase">
+        <div class="showcase-item">
+          <div class="showcase-text">
+            <h4>自分の「どうして？」を深める</h4>
+            <p>ふと気になったものを撮影して質問を投稿すると、AIが「<span class="bold marker-yellow">質問に対する回答</span>」＋「<span class="bold marker-yellow">それにまつわる問いかけ</span>」を返します。AIからの「問いかけ」に応えることで、より深い理解を得ることができます。</p>
+            <p>また、AIの回答には根拠となった情報のURLが提示されるため、信頼性の確認と、さらなる深掘りが可能です。</p>
+            <p></p>
+          </div>
+          <div class="figure">
+            <img src="/img/blog/engineer-guild-hackathon-2025/holo-01.png" alt="自分の「どうして？」を深める">
+            <p class="figure_caption">図3. 自分の「どうして？」を深める</p>
+          </div>
+        </div>
+        <div class="showcase-item">
+          <div class="showcase-text">
+            <h4>みんなの「どうして？」を知る</h4>
+            <p>他のユーザーが地図上に残した「はっけん」を地図や一覧から見ることができ、自分一人では気づけなかった知識に触れることができます。また、検索絞り込み機能を使えば、近所の野良猫の行動範囲や植生の分布なども簡単に可視化できます。</p>
+          </div>
+          <div class="figure">
+            <img src="/img/blog/engineer-guild-hackathon-2025/holo-02.png" alt="みんなの「どうして？」を知る">
+            <p class="figure_caption">図4. みんなの「どうして？」を知る</p>
+          </div>
+        </div>
+        <div class="showcase-item">
+          <div class="showcase-text">
+            <h4>手軽な共有機能</h4>
+            <p>Webアプリとして構築したため、アプリのインストールは不要です。LINEなどでリンクを送るだけで、お気に入りの「はっけん」を友人に簡単に共有できます。また、ユーザーによる投稿が「地域名 × 生物名」という質の高い検索キーワードとなり、検索結果に表示されるようになります。</p>
+          </div>
+          <div class="figure">
+            <img src="/img/blog/engineer-guild-hackathon-2025/holo-03.png" alt="手軽な共有機能">
+            <p class="figure_caption">図5. 手軽な共有機能</p>
+          </div>
+        </div>
+        <div class="showcase-item">
+          <div class="showcase-text">
+            <h4>検索とおすすめ機能</h4>
+            <p>ベクトル検索技術により、ユーザーの投稿をより効率的に発見できます。特に、「暗い」や「マンホール」といった、写真に移る情景・被写体の検索も可能となっています。</p>
+            <p>また、投稿の詳細画面では、その「はっけん」に関連したおすすめ投稿も確認することができます。</p>
+          </div>
+          <div class="figure">
+            <img src="/img/blog/engineer-guild-hackathon-2025/holo-04.png" alt="検索とおすすめ機能">
+            <p class="figure_caption">図6. 検索とおすすめ機能</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- <h3>将来の展望</h3>
+      <ul class="itemize">
+        <li>将来的には、住民や観光客が街の歴史や魅力を再発見することで、地域への愛着を醸成する「自治体連携」のプラットフォームとしての活用を想定しています。</li>
+        <li>また、動物園や水族館といった文化施設において、施設の隠れた豆知識をアプリ内に投稿することで、来場者の興味を惹きつける「新しいPRの形」も提案可能です。</li>
+      </ul> -->
+
+      <h3>決勝用プレゼン資料</h3>
+      <li class="link-item">
+        <a href="https://www.canva.com/design/DAGyvV7xHEw/HdBF_WemKPQ5FikKThroBQ/view?utm_content=DAGyvV7xHEw&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=he880c6234f">
+          <p class="title">EGH_202509_決勝</p>
+          <p class="description">Engineer Guild Hackathon 2025 の決勝で使用したプレゼン資料。</p>
+          <div class="link">
+            <img src="https://www.google.com/s2/favicons?sz=32&domain=canva.com" alt="favicon" class="favicon">
+            <p>https://www.canva.com</p>
+          </div>
+        </a>
+      </li>
+    </section>
+
+    <section>
+      <h2>技術スタックとアーキテクチャ</h2>
+      <p>アーキテクチャ設計にはかなりこだわりました。クラウドインフラは <span class="bold">Google Cloud Platform (GCP)</span> をベースに構築し、「いかに短期間で、かつ複数人が並行して安全に開発できるか」を最重要視しています。</p>
+
+      <details class="accordion">
+        <summary class="accordion-header">
+          使用した言語・ツールについて
+        </summary>
+        <div class="accordion-content">
+          <ul class="itemize">
+            <li><span class="bold">フロントエンド</span>：TypeScript、React、Next.js、MUI、HTML/CSS</li>
+            <li><span class="bold">バックエンド</span>：Python、Flask、pytest、Shell Script</li>
+            <li><span class="bold">インフラ・クラウド (GCP)</span>：Cloud Run、Cloud Scheduler、Cloud Run Job、Cloud SQL (PostgreSQL)、Cloud Storage、Secret Manager</li>
+            <li><span class="bold">AI・検索エンジン</span>：Gemini API、Vertex AI Search</li>
+            <li><span class="bold">DevOps・開発環境</span>：Docker、Dev Containers、ngrok、Git、GitHub、GitHub Actions (CI/CD / Secrets)、Cursor、VSCode、Codex</li>
+            <li><span class="bold">デザイン・企画・その他</span>：Figma (UI制作)、Canva (プレゼン)、Hidane (ブレスト)、Notion、HackMD、Discord、formrun (アンケート)</li>
+          </ul>
+        </div>
+      </details>
+
       <div class="figure">
         <img src="/img/blog/engineer-guild-hackathon-2025/holo_architecture.png" alt="holo アーキテクチャ" class="blog_image">
-        <p class="figure_caption">図3. holo アーキテクチャ</p>
+        <p class="figure_caption">図7. holo アーキテクチャ</p>
       </div>
+
+      <h3 style="color: #687638;">1. Webアプリの選定とSEO対策</h3>
+      <p>我々は、本アプリには、まず「使ってもらうハードルの低さ」が重要である考えました。そこで、アプリのインストールが不要で、URLだけで簡単に「はっけん」の共有ができるよう、Webアプリを選択しました。これにより、LINE等のSNSでの情報の拡散を促進しています。</p>
+      <p>さらに、フロントエンドには SSR (サーバーサイドレンダリング) の観点から Next.js を採用しました。これにより、ユーザーの投稿がそのまま<span class="bold marker-yellow">「地域名 × 生物名」</span> という質の高い検索キーワードとなり、SEOに強いコンテンツが自動生成される仕組みを構築しました。</p>
+
+      <h3 style="color: #687638;">2. Dockerコンテナ化とGCPデプロイ</h3>
+      <p>フロントエンドとバックエンド（Flask）でサービス毎にコンテナを完全に分離し、メンテナンス性を向上させました。開発時は <span class="bold">DevContainer</span> を用いて開発環境を共通化しました（メンバーのPCスペックによってはDockerビルドが重くなり、トラシューのたびに私の作業が止まる…というハプニングもありましたが 笑）。ライブラリやVSCodeの拡張機能などをメンバー間で一括管理できたのは、長い目で見れば作業効率の向上に寄与できたと思っています。</p>
+      <p>予選発表の時点では、 <span class="bold">ngrok</span> を使ってローカルのバックエンドをホスティングし、動くデモを完成させていた点は大きな強みでした。デプロイ時はコンテナごとに Cloud Run でサービスを展開するため、ngrokからGCP本番環境への移行も割とスムーズにできたのではないかと思ってます。</p>
+
+      <h3 style="color: #687638;">3. データベースとバッチ処理</h3>
+      <p>データベースには Cloud SQL の <span class="bold">PostgreSQL</span> を使用しています。実は当初、バックエンドをGCPではなく Supabase にデプロイしようと考えていた名残です。最終的に検索機能などで GCP (<span class="bold">Vertex AI Search</span>) に統一することになったため、結果論ですが「使い慣れている MySQL でもよかったな」と思ってます。</p>
+      <p>また検索インデックスの更新には、<span class="bold">Cloud Scheduler</span> と <span class="bold">Cloud Run Job</span> を用いて定期的にデータベースから JSON Lines を生成し、Vertex AI へ連携する裏側のアーキテクチャもしっかり組んでいます。</p>
+
+      <h3 style="color: #687638;">4. プライバシー保護とセキュリティ</h3>
+      <p>位置情報を扱うSNS系アプリだからこそ、安全対策も徹底しました。</p>
+      <ul class="itemize">
+        <li><strong>プライバシー保護</strong>： 他ユーザーの投稿は、作成から<span class="bold marker-yellow">15分経過したものだけを地図上に表示する</span>ことで、リアルタイムな位置情報などのプライバシーを保護しています。また、投稿にはユーザー名を表示しないことで身元の特定を防止しました。</span></li>
+        <li><strong>セキュリティ</strong>： API呼び出しを登録済みトークン所持者に限定して不正利用を遮断。AIへの質問内容もフィルタを経てプロンプトインジェクション攻撃などの悪意混入を抑止し、GCP Secret Manager による機密情報の堅牢化も行っています。</li>
+      </ul>
+
       <h3>開発リポジトリ</h3>
       <li class="link-item">
         <a href="https://github.com/Engineer-Guild-Hackathon/team-12-app">
@@ -255,6 +361,80 @@
           </ul>
         </div>
       </div>
+    </section>
+
+    <section>
+      <h2>プロジェクトの振り返りと総括</h2>
+      <p>2週間という限られた期間の中で、チームとして何を優先し、どこでつまずいたのか。そしてこの開発を通して何を感じたのかを、3つのテーマに分けて振り返ります。</p>
+
+      <div class="summary-box green">
+        <div class="summary-label">💡 今回の開発で大切にしたこと</div>
+          <ul class="summary-list">
+            <li>
+              <h4>徹底したリポジトリ運用と品質管理</h4>
+              <p>現時点での「自分の中の最適解」に近い運用が実現できたと思います。フロント・バック共にテストコードを整備し、リーダーが必ずプルリクエストをレビューする体制を徹底。開発終盤、多くのチームが時間に追われてブランチ運用を崩したり、main ブランチで直接コード編集したりする中で、最後まで運用方針を貫き通したことは、コード品質の面で大きな強みになったと思います。</p>
+              <p>一方で、IssueやProjects機能は一切使えていなかったため、次回はタスク管理も GitHub 上で完結させ、よりシームレスな進捗管理を目指したいです。</p>
+            </li>
+            <li>
+              <h4>「情報の透明化」を支えるドキュメント管理</h4>
+              <p><a href="https://github.com/Engineer-Guild-Hackathon/team-12-app/tree/main/docs"><span class="bold">docs/</span></a> 配下に環境構築マニュアル、議事録、技術調査報告書を集約し、開発の経緯や仕様を常に可視化しました。特に Dev Container を活用した <a href="https://github.com/Engineer-Guild-Hackathon/team-12-app/blob/main/docs/dev_environment.md">環境構築</a> や <a href="https://github.com/Engineer-Guild-Hackathon/team-12-app/blob/main/docs/report/20250918_cloud_run_scheduler.md">デプロイ手順</a> を詳細に言語化したことで、メンバーの環境構築コストを大幅に削減し、開発へのスムーズな合流をサポートしました。</p>
+            </li>
+            <li>
+              <h4>フロント・バック間の連携ロスを最小化</h4>
+              <p>APIサーバーの構築と並行して、<a href="https://github.com/Engineer-Guild-Hackathon/team-12-app/tree/main/backend"><span class="bold">backend/</span></a> 配下に詳細なリファレンスマニュアルを整備。さらに、バックエンドの具体的な呼び出し例を <a href="https://github.com/Engineer-Guild-Hackathon/team-12-app/tree/main/backend/src/examples"><span class="bold">examples/</span></a> として用意したことで、フロントエンド開発者が実装に迷わず集中できる環境を整えました。</p>
+            </li>
+            <li>
+              <h4>Docker による開発環境の構築</h4>
+              <p>チーム全体のライブラリや拡張機能の差異を解消するため、Docker を用いた環境構築を徹底しました。フロントとバックでコンテナを分け、Docker Network で橋渡しをすることで、サーバー間通信の実装もスムーズに行えました。ただし、一部メンバーのPCスペックに依存するビルドの遅延や、それに伴うトラブルシューティングに時間を取られた点は、今後の環境設計における教訓となりました。</p>
+            </li>
+            <li>
+              <h4>PoC（概念実証）の実施</h4>
+              <p>ハッカソンという短期間ながら、計36名（学生25名、社会人10名、その他1名）のユーザーに実際にアプリを届けてアンケートを実施しました。参加チームの中で唯一、実ユーザーによるテストサイクルを回せたことは大きなアドバンテージとなり、生の声に基づいた説得力のあるレビューをプレゼンに反映させることができました。</p>
+            </li>
+          </ul>
+      </div>
+
+      <div class="summary-box red">
+        <div class="summary-label">🔥 反省点・次に活かすべき教訓</div>
+        <!-- こちらも summary-list です -->
+        <ul class="summary-list">
+          <li>
+            <h4>develop ブランチを作らなかった</h4>
+            <p>開発初期に、何も考えず「develop ブランチはいらないでしょ」と言ったことが、後に大問題になりました。結果、feat ブランチが直接 main に繋がり、後になって <span class="bold marker-yellow">main ブランチが更新されるたびに本番環境へ自動デプロイされてしまう問題</span> が発生。テスト環境検証ができないため、main にマージした途端に本番環境で「デグレード」が発生し、冷や汗をかく場面が何度もありました…。develop ブランチは <span class="bold">"絶対必須"</span> です。</p>
+          </li>
+          <li>
+            <h4>APIフレームワークの選定ミス？</h4>
+            <p>今回は「私が使い慣れているから」という理由で Flask を用いてAPIを作成しましたが、リファレンスマニュアルを綺麗に自動生成できることを考えると、<strong>FastAPI</strong> を採用した方が圧倒的に開発体験が良かったなと後悔しています。</p>
+          </li>
+          <li>
+            <h4>ネイティブアプリ開発の知識不足</h4>
+            <p>「インストール不要な手軽さ」を重視してWebアプリ（Next.js）にしましたが、審査員の方から「なぜネイティブアプリにしないのか？」という指摘もありました。他チームの作品を見ても、今後のためにやはりネイティブアプリ（Swift, Flutter等）の知識は絶対に持っておくべきだと痛感しました。</p>
+          </li>
+          <li>
+            <h4>PoC時に初期データを用意するべきだった</h4>
+            <p>PoC開始時、最初は地図上に他の人の「はっけん」が用意されていない状態だったため、共有体験の面白さを100%伝えきず、アンケート調査の回答も低評価でした。事前にダミーデータや初期データを仕込んでおくべきだったと反省しています。</p>
+          </li>
+          <li>
+            <h4>「困りごとベース」開発の重要性</h4>
+            <p>チームメンバー全体が「課題解決」よりも「自分たちが作ってて面白いか」を重視する傾向にあり、ペルソナ設定で迷走し開発がストップする局面がありました。例えば「子供向けにした方がいいのでは？」という案が出ましたが、これにはUI設計やプログラムの大幅な修正が必要となる他、私の母親からも<strong>「子育てにこのアプリは必要ない」</strong> との意見をもらい、結局、当初のペルソナ (大学生) に戻るという紆余曲折がありました。</p>
+            <p>今回はチームメンバーが慣れている方法に沿って開発を進めましたが、今後は「困りごとベース」の開発を意識して、よりユーザー中心の開発を心がけたいと思います。</p>
+          </li>
+        </ul>
+      </div>
+
+      <div class="summary-box dark">
+        <div class="summary-label">💭 参加した正直な感想</div>
+        <p>まず、<span class="bold marker-yellow">周りの参加者のレベルの高さ</span>に圧倒されました。プロダクトにAIの機能を搭載するのはもはや当たり前、さらにはAIエージェントにコーディングをさせることすら当然、という次元の戦いでした。</p>
+        <p>そんなバチバチの環境の中、朝9時前に大学に集合して、翌日の夜中1時に帰る…という生活をほぼ2週間続けました。体力的にはキツかったですが、なんやかんやで<span class="bold marker-yellow">「学生の時にしか体験できない青春だな」</span>と感じ、「モノづくりって楽しいな」と心の底から思うことができました。</p>
+        <p>今回一番の教訓は<span class="bold marker-yellow">「ドキュメントをなるべく書くべし」</span>ということです。技術調査マニュアルを残しておくと、後で見返した時に「なぜその技術選定をしたのか？」という意図を見失わずに済みます。 見返して自分が別の開発に携わる時の資産になりますし、長期間保守運用していく上では絶対に欠かせない要素だと身をもって学びました。(今、この記事を書いている最中も役立っています☺️)</p>
+        <p>そしてなにより、私自身の当初の目的であった<span class="bold marker-yellow">「北大で開発仲間を作る」</span>ということが達成できてよかったです。これからも、新しくできた仲間と共に、どんどんハッカソンにチャレンジしていきたいです！</p>
+      </div>
+    </section>
+
+    <section>
+      <h2>今後やりたいこと</h2>
+      <p>今回の開発を通して、Google Cloud (GCP) での開発フローはかなり学ぶことができたので、次は <span class="bold marker-yellow">AWS での開発</span> にも挑戦してみたいです。（こちらは、アルバイトで開発案件がもらえそう...？）</p>
+      <p>また、前述の反省点でも挙げた通り、<span class="bold marker-yellow">ネイティブアプリの開発知識</span> を身につける必要性を感じているので、Flutter や Swift など、とにかく「何か一つのフレームワークを完全に使いこなせる」レベルになるまで深く勉強していこうと思います。</p>
     </section>
   </main>
   <footer></footer>
