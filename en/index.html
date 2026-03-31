@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="google-site-verification" content="Lb4clmdPBRgJ37bUrRi2CQPr1y9vSDDsHMvQh3WEnyg" />
@@ -7,243 +7,352 @@
   <link rel="icon" href="/img/favicon.ico" type="image/x-icon">
   <link rel="stylesheet" href="../css/global.css">
   <link rel="stylesheet" href="../css/header.css">
+  <link rel="stylesheet" href="../css/footer.css">
   <link rel="stylesheet" href="../css/index.css">
-  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <!-- <link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New&display=swap" rel="stylesheet"> -->
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
   <title>IZUMI Tomonari | 泉 知成</title>
 </head>
 
 <body>
   <header id="header">
-    <a href="/" class="header-logo">
-      <img src="/img/icon.jpeg" alt="icon" class="icon">
-      <span class="header-logo-text font-en">IZUMI TOMONARI</span>
-    </a>
-    <input type="checkbox" name="hamburger" id="hamburger" class="hamburger-checkbox"/>
-    <ul class="header-nav hamburger-menu-list">
-      <li class="header-nav-item">
-        <a href="/math.html" class="header-nav-link">Teaching Materials</a>
-      </li>
-      <li class="header-nav-item">
-        <a href="/blog/" class="header-nav-link">Blogs</a>
-      </li>
-      <li class="header-nav-item">
-        <a href="/link.html" class="header-nav-link">Links</a>
-      </li>
-      <li class="header-nav-item lang-change">
-        <a href="/"><svg width="100%" height="100%" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C15 4 15.9228 8.29203 16 12C15.9228 15.708 15 20 12 22M12 2C9 4 8.07725 8.29203 8 12C8.07725 15.708 9 20 12 22M12 2C6.47715 2 2 6.47715 2 12M12 2C17.5228 2 22 6.47715 22 12M12 22C17.5229 22 22 17.5228 22 12M12 22C6.47716 22 2 17.5228 2 12M22 12C20 15 15.708 15.9228 12 16C8.29203 15.9228 4 15 2 12M22 12C20 9 15.708 8.07725 12 8C8.29203 8.07725 4 9 2 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>JP</a>
-      </li>
-      <li class="header-nav-item">
-        <a href="https://github.com/Tomopu" class="header-nav-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path d="M12 1C5.9225 1 1 5.9225 1 12C1 16.8675 4.14875 20.9787 8.52125 22.4362C9.07125 22.5325 9.2775 22.2025 9.2775 21.9137C9.2775 21.6525 9.26375 20.7862 9.26375 19.865C6.5 20.3737 5.785 19.1912 5.565 18.5725C5.44125 18.2562 4.905 17.28 4.4375 17.0187C4.0525 16.8125 3.5025 16.3037 4.42375 16.29C5.29 16.2762 5.90875 17.0875 6.115 17.4175C7.105 19.0812 8.68625 18.6137 9.31875 18.325C9.415 17.61 9.70375 17.1287 10.02 16.8537C7.5725 16.5787 5.015 15.63 5.015 11.4225C5.015 10.2262 5.44125 9.23625 6.1425 8.46625C6.0325 8.19125 5.6475 7.06375 6.2525 5.55125C6.2525 5.55125 7.17375 5.2625 9.2775 6.67875C10.1575 6.43125 11.0925 6.3075 12.0275 6.3075C12.9625 6.3075 13.8975 6.43125 14.7775 6.67875C16.8813 5.24875 17.8025 5.55125 17.8025 5.55125C18.4075 7.06375 18.0225 8.19125 17.9125 8.46625C18.6138 9.23625 19.04 10.2125 19.04 11.4225C19.04 15.6437 16.4688 16.5787 14.0213 16.8537C14.42 17.1975 14.7638 17.8575 14.7638 18.8887C14.7638 20.36 14.75 21.5425 14.75 21.9137C14.75 22.2025 14.9563 22.5462 15.5063 22.4362C19.8513 20.9787 23 16.8537 23 12C23 5.9225 18.0775 1 12 1Z"></path></svg></a>
-      </li>
-    </ul>
-    <label for="hamburger" class="hamburger-button">
-      <span class="hamburger-mark"></span>
-      <span class="hamburger-mark"></span>
-      <span class="hamburger-mark"></span>
-    </label>
+    <div class="header-container">
+      <a href="/en" class="header-logo">
+        <img src="/img/icon.jpeg" alt="icon" class="icon">
+        <span class="header-logo-text font-en">IZUMI TOMONARI</span>
+      </a>
+      <input type="checkbox" name="hamburger" id="hamburger" class="hamburger-checkbox"/>
+      <ul class="header-nav hamburger-menu-list">
+        <li class="header-nav-item">
+          <a href="/math.html" class="header-nav-link">Teaching Materials</a>
+        </li>
+        <li class="header-nav-item">
+          <a href="/blog/" class="header-nav-link">Blogs</a>
+        </li>
+        <li class="header-nav-item">
+          <a href="/link.html" class="header-nav-link">Links</a>
+        </li>
+        <li class="header-nav-item">
+          <div class="nav-divider"></div>
+        </li>
+        <li class="header-nav-item lang-change">
+          <a href="/"><svg class="svg-icon" width="100%" height="100%" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C15 4 15.9228 8.29203 16 12C15.9228 15.708 15 20 12 22M12 2C9 4 8.07725 8.29203 8 12C8.07725 15.708 9 20 12 22M12 2C6.47715 2 2 6.47715 2 12M12 2C17.5228 2 22 6.47715 22 12M12 22C17.5229 22 22 17.5228 22 12M12 22C6.47716 22 2 17.5228 2 12M22 12C20 15 15.708 15.9228 12 16C8.29203 15.9228 4 15 2 12M22 12C20 9 15.708 8.07725 12 8C8.29203 8.07725 4 9 2 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>JP</a>
+        </li>
+        <li class="header-nav-item nav-github">
+          <a href="https://github.com/Tomopu" class="header-nav-link"><i class="devicon-github-plain" style="font-size: 25px;"></i></a>
+        </li>
+      </ul>
+      <label for="hamburger" class="hamburger-button">
+        <span class="hamburger-mark"></span>
+        <span class="hamburger-mark"></span>
+        <span class="hamburger-mark"></span>
+      </label>
+    </div>
   </header>
 
   <main id="main">
     <div id="main-visual">
-      <img id="myface" src="../img/myface.jpg" alt="myface" class="profile-image">
+      <div class="hero-image">
+        <img id="myface" src="../img/myface.jpg" alt="myface" class="profile-image">
+      </div>
       <div class="profile">
         <h1></h1>
         <h1><span>IZUMI</span> <span>Tomonari</span></h1>
         <div>
-          <h2>Keywords</h2>
+          <h2 class="hero-title"><i class="ph ph-key"></i>Keywords</h2>
+          <div>
+            <span class="tip-box">Algorithm Theory</span>
+            <span class="tip-box">Graph Theory</span>
+            <span class="tip-box">Mathematical Optimization</span>
+            <span class="tip-box">Bandit Problems</span>
+            <span class="tip-box">Artificial Intelligence</span>
+            <span class="tip-box">Front-end Engineering</span>
+            <span class="tip-box">Back-end Engineering</span>
+            <span class="tip-box">Cybersecurity</span>
+            <span class="tip-box">UI/UX Design</span>
+          </div>
+        </div>
+        <div>
+          <h2 class="hero-title"><i class="ph ph-heart"></i>Hobbies</h2>
           <p>
-            <span>Algorithm Theory, </span>
-            <span>Graph Theory, </span>
-            <span>Mathematical Optimization,</span>
-            <span>Bandit Problems, </span>
-            <span>Artificial Intelligence, </span>
-            <span>Front-end Engineering, </span>
-            <span>Cybersecurity, </span>
-            <span>UI/UX Design</span>
+            <span class="tip-box">Cooking</span>
+            <span class="tip-box">Drawing</span>
+            <span class="tip-box">Mathematics</span>
+            <span class="tip-box">Crochet</span>
           </p>
-        </div>
-        <div>
-          <h2>Hobbies</h2>
-          Cooking, Drawing, Mathematics, Crochet
-        </div>
-        <div>
-          <h2>Skills</h2>
-          <p>Python, C, Java, Scheme, JavaScript, Ruby, PHP, Swift, HTML, CSS, Docker, Google Cloud, Google Apps Script, Microsoft Graph API, MySQL, Godot Engine, LaTeX, Figma</p>
         </div>
       </div>
     </div>
 
-    <section>
-      <h2>Career</h2>
-      <table>
-        <tr>
-          <td>2002</td>
-          <td>Born in Aomori City, Aomori Prefecture</td>
-        </tr>
-        <tr>
-          <td>Mar. 2015</td>
-          <td>Graduated from Ryouun Elementary School Asahikawa City, Hokkaido</td>
-        </tr>
-        <tr>
-          <td>Mar. 2018</td>
-          <td>Graduated from Niiza Daini Junior High School, Saitama Prefecture</td>
-        </tr>
-        <tr>
-          <td>Mar. 2023</td>
-          <td>Graduated from the Course in the Field of Information Engineering, Smart Mechanics Course, Department of Creative Engineering, National Institute of Technology (KOSEN), Kushiro College</td>
-        </tr>
-        <tr>
-          <td>Mar. 2023</td>
-          <td>Completed the Advanced Course of Electronic and Information Systems Engineering, National Institute of Technology (KOSEN), Kushiro College</td>
-        </tr>
-        <tr>
-          <td>Apr. 2025</td>
-          <td>Enrolled in the Graduate School of Information Science and Technology, Hokkaido University</td>
-        </tr>
-      </table>
+    <section class="">
+      <h2 class="section-title font-en">Skills</h2>
+      <div class="skill-list">
+        <span class="skill backend"><i class="devicon-python-plain"></i> Python</span>
+        <span class="skill backend"><i class="devicon-c-plain"></i> C</span>
+        <span class="skill backend"><i class="devicon-java-plain"></i> Java</span>
+        <span class="skill backend"><i class="devicon-ruby-plain"></i> Ruby</span>
+        <span class="skill backend"><i class="devicon-php-plain"></i> PHP</span>
+        <span class="skill backend"><span style="font-weight: bold; margin-right: 2px;">λ</span> Scheme</span>
+        <span class="skill backend"><i class="devicon-nodejs-plain"></i> Node.js</span>
+
+        <span class="skill frontend"><i class="devicon-javascript-plain"></i> JavaScript</span>
+        <span class="skill frontend"><i class="devicon-flask-plain"></i> Flask</span>
+        <span class="skill frontend"><i class="devicon-react-plain"></i> React</span>
+        <span class="skill frontend"><i class="devicon-streamlit-plain"></i> Streamlit</span>
+        <span class="skill frontend"><i class="devicon-html5-plain"></i> HTML</span>
+        <span class="skill frontend"><i class="devicon-css3-plain"></i> CSS</span>
+
+        <span class="skill mobile"><i class="devicon-swift-plain"></i> Swift</span>
+
+        <span class="skill infra"><i class="devicon-mysql-plain"></i> MySQL</span>
+        <span class="skill infra"><i class="devicon-docker-plain"></i> Docker</span>
+        <span class="skill infra"><i class="devicon-googlecloud-plain"></i> Google Cloud</span>
+        <span class="skill infra"><i class="devicon-bash-plain"></i> bash</span>
+        <span class="skill infra"><i class="devicon-apache-plain"></i> Apache</span>
+
+        <span class="skill api"> <i class="devicon-google-plain"></i> Google Apps Script</span>
+        <span class="skill api"> <i class="devicon-azure-plain"></i> MicrosoftGraph API</span>
+        <span class="skill api"> <i class="devicon-slack-plain"></i> Slack API</span>
+
+        <span class="skill design"><i class="devicon-figma-plain"></i> Figma</span>
+
+        <span class="skill misc"><i class="devicon-git-plain"></i> Git</span>
+        <span class="skill misc"><i class="devicon-github-plain"></i> GitHub</span>
+        <span class="skill misc"><i class="devicon-godot-plain"></i> Godot Engine</span>
+        <span class="skill misc"><i class="devicon-latex-plain"></i> LaTeX</span>
+      </div>
     </section>
+
+    <div class="two-columns">
+      <section>
+        <h2 class="section-title font-en">Education</h2>
+        <div class="timeline">
+          <div class="timeline-item">
+            <span class="timeline-date font-en active">2025.04 -</span>
+            <h3 class="timeline-title">Hokkaido University</h3>
+            <p class="timeline-desc">Graduate School of Information Science and Technology</p>
+          </div>
+          <div class="timeline-item">
+            <span class="timeline-date font-en">2023.04 - 2025.03</span>
+            <h3 class="timeline-title">National Institute of Technology (KOSEN), Kushiro College</h3>
+            <p class="timeline-desc">Advanced Course of Electronic and Information Systems Engineering</p>
+          </div>
+          <div class="timeline-item">
+            <span class="timeline-date font-en">2018.04 - 2023.03</span>
+            <h3 class="timeline-title">National Institute of Technology (KOSEN), Kushiro College</h3>
+            <p class="timeline-desc">Course in the Field of Information Engineering, Smart Mechanics Course, Department of Creative Engineering</p>
+          </div>
+          <div class="timeline-item">
+            <span class="timeline-date font-en">2015.04 - 2018.03</span>
+            <h3 class="timeline-title">Niiza Daini Junior High School, Saitama Prefecture</h3>
+          </div>
+          <div class="timeline-item">
+            <span class="timeline-date font-en">2011.04 - 2015.03</span>
+            <h3 class="timeline-title">Ryouun Elementary School, Asahikawa City, Hokkaido</h3>
+            <p class="timeline-desc">2010.04 - 2011.03 Tottori Nishi Elementary School, Kushiro City, Hokkaido</p>
+            <p class="timeline-desc">2009.04 - 2010.03 Sakae Elementary School, Obihiro City, Hokkaido</p>
+          </div>
+        </div>
+      </section>
+      <section>
+        <h2 class="section-title font-en">Experience</h2>
+        <div class="timeline">
+          <div class="timeline-item">
+            <span class="timeline-date font-en active">2025.04 -</span>
+            <h3 class="timeline-title"><a href="https://www.sigmailab.com/">Sigma-i Co., Ltd.</a></h3>
+            <p class="timeline-desc">Software Developer Team Leader</p>
+          </div>
+          <div class="timeline-item">
+            <span class="timeline-date font-en">2023.6 - 2024.4</span>
+            <h3 class="timeline-title"><a href="https://k-hack.co.jp">K-HACK Inc.</a></h3>
+            <p class="timeline-desc">Software Engineer</p>
+          </div>
+          <div class="timeline-item">
+            <span class="timeline-date font-en">2022.8 - 2022.12</span>
+            <h3 class="timeline-title"><a href="https://www.shika-hd.com">Shika Holdings Inc.</a></h3>
+            <p class="timeline-desc">Software Engineer</p>
+          </div>
+        </div>
+      </section>
+    </div>
+
     <section>
-      <h2>Part-time Work Experience</h2>
-      <table class="even-row-gray">
-        <tr>
-          <td>Aug.-Dec. 2022</td>
-          <td><a href="https://www.shika-hd.com">Shika Holdings Inc.</a></td>
-          <td>Software Engineer</td>
-        </tr>
-        <tr>
-          <td>Jun. 2023-Apr. 2024</td>
-          <td><a href="https://k-hack.co.jp">K-HACK Inc.</a></td>
-          <td>Software Engineer</td>
-        </tr>
-        <tr>
-          <td>Nov. 2023-Current</td>
-          <td><a href="https://www.sigmailab.com/">Sigma-i Co., Ltd.</a></td>
-          <td>Software Developer</td>
-        </tr>
-      </table>
+      <h2 class="section-title font-en">Activities</h2>
+      <div class="card-list">
+        <div class="card-item">
+          <span class="card-date">2025.11</span>
+          <div class="card-content">
+            <h4><a href="https://geek.supporterz.jp/geekten/2025">Geekten 2025</a> <span class="badge">Competed in Preliminaries</span></h4>
+            <p><a href="https://www.canva.com/design/DAG3DqC0YbE/O8VCICs7NHVKhQyPS2IBIA/view?utm_content=DAG3DqC0YbE&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h64be4df23f#1">Development of “holo” — a new walking map app powered by an AI camera and user questions (Canva)</a></p>
+          </div>
+        </div>
+        <div class="card-item">
+          <span class="card-date">2025.9</span>
+          <div class="card-content">
+            <h4><a href="https://gaishishukatsu.com/recruiting_info/view/12647">Engineer Guild Hackathon 2025</a> <span class="badge">3rd Place</span></h4>
+            <p><a href="https://github.com/Engineer-Guild-Hackathon/team-12-app">Development of “holo” — a new walking map app powered by an AI camera and user questions (GitHub)</a></p>
+          </div>
+        </div>
+        <div class="card-item">
+          <span class="card-date">2025.8 - 9</span>
+          <div class="card-content">
+            <h4><a href="https://weblab.t.u-tokyo.ac.jp/lecture/course-list/financial-machin-learning/">Finance Summer 2025 (Financial Markets and Machine Learning)</a></h4>
+            <p>An intensive course covering the foundations of financial markets and applications of machine learning in finance</p>
+          </div>
+        </div>
+        <div class="card-item">
+          <span class="card-date">2025.8 - 9</span>
+          <div class="card-content">
+            <h4><a href="https://weblab.t.u-tokyo.ac.jp/lecture/course-list/financial-machin-learning/">Finance Summer 2025 (Financial Markets and Machine Learning)</a></h4>
+            <p>An intensive course covering the foundations of financial markets and applications of machine learning in finance</p>
+          </div>
+        </div>
+        <details class="activities-accordion">
+          <summary class="accordion-summary">
+            <span>Show <span class="bold">15</span> more past activities</span>
+            <i class="ph ph-caret-down"></i>
+          </summary>
+          <div class="card-item">
+            <span class="card-date">2025.8 - 9</span>
+            <div class="card-content">
+              <h4><a href="https://weblab.t.u-tokyo.ac.jp/lecture/course-list/deep-reinforcement-learning/">RL Summer 2025 (Deep Reinforcement Learning)</a></h4>
+              <p>A short-term intensive course on deep reinforcement learning, covering theory and applications (robotics, game AI, finance)</p>
+            </div>
+          </div>
+          <div class="card-item">
+            <span class="card-date">2025.7 - 9</span>
+            <div class="card-content">
+              <h4><a href="https://weblab.t.u-tokyo.ac.jp/lecture/course-list/deep-generative-model/">DGM Summer 2025 (Deep Generative Models)</a></h4>
+              <p>An intensive hands-on course covering generative models, from fundamentals to advanced diffusion models</p>
+            </div>
+          </div>
+          <div class="card-item">
+            <span class="card-date">2025.4 - 8</span>
+            <div class="card-content">
+              <h4><a href="https://gci2.t.u-tokyo.ac.jp/archives/course/gci-2025-summer">Global Consumer Intelligence (GCI) 2025 Summer</a></h4>
+              <p>Studied the basics of AI and business problem-solving through data science</p>
+            </div>
+          </div>
+          <div class="card-item">
+            <span class="card-date">2025.3</span>
+            <div class="card-content">
+              <h4><a href="https://hokkaido.kosen-campus.com">Hokkaido University × KOSEN Ideathon</a></h4>
+              <p>Worked on building a DX system to centralize diverse and complex support for crime victims across institutions</p>
+            </div>
+          </div>
+          <div class="card-item">
+            <span class="card-date">2024.9 - 12</span>
+            <div class="card-content">
+              <h4><a href="https://www.turkuamk.fi/en/">Turku University of Applied Sciences, Finland</a>(Study Abroad)</h4>
+              <p><a href="https://www.turkuamk.fi/en/studies/ict-and-industrial-management/">ICT and Industrial management, ICT Projects and Cybersecurity</a></p>
+            </div>
+          </div>
+          <div class="card-item">
+            <span class="card-date">2024 - 2025</span>
+            <div class="card-content">
+              <h4><a href="https://kosen-incubate.jp">KIC (KOSEN Incubate Committee) Project</a> <span class="badge">Selected for Late-Stage PoC Program・Awarded 500k JPY GAP Funding</span></h4>
+              <p><a href="https://prtimes.jp/main/html/rd/p/000000078.000099287.html">Contributed to a project developing an add-on device for small snowplows using FM-CW radar to detect obstacles in snow</a></p>
+            </div>
+          </div>
+          <div class="card-item">
+            <span class="card-date">2023.3</span>
+            <div class="card-content">
+              <h4><a href="https://www.hakodate-ct.ac.jp/2023/03/27/多国籍学生によるワークショップを中心とした「/">Hakodate KOSEN Global Seminar 2023</a> <span class="badge">Best Presentation Award</span></h4>
+              <p>Proposed an online shop for recyclable food waste addressing food loss issues</p>
+            </div>
+          </div>
+          <div class="card-item">
+            <span class="card-date">2023.1 - 5</span>
+            <div class="card-content">
+              <h4><a href="https://altema.is.tohoku.ac.jp/QA4U2/">Quantum Annealing for You 2nd Party!</a> <span class="badge">5th Place</span></h4>
+              <p>Developed a home care shift optimization app using quantum annealing</p>
+            </div>
+          </div>
+          <div class="card-item">
+            <span class="card-date">2022.8</span>
+            <div class="card-content">
+              <h4><a href="https://www.ehime-np.co.jp/article/prtimes1003">K-SEC Security Summer School 2022</a> <span class="badge">2nd Place in CTF</span></h4>
+              <p>A 2-day hands-on security course learning cyberattacks through IoT/AI lectures and CTF exercises</p>
+            </div>
+          </div>
+          <div class="card-item">
+            <span class="card-date">2022.6</span>
+            <div class="card-content">
+              <h4><a href="https://nposw.org/kushiro220624/">Startup Weekend Kushiro</a> <span class="badge">3rd Place</span></h4>
+              <p>Proposed a business model for a bereavement notification app</p>
+            </div>
+          </div>
+          <div class="card-item">
+            <span class="card-date">2022.2</span>
+            <div class="card-content">
+              <h4><a href="https://k-sec.kochi-ct.ac.jp/topics-news/info-2.html">Cybersecurity "Top Gun Training"</a></h4>
+              <p>Engaged in hands-on exercises on CSIRT incident response and cyberattack log analysis led by the Metropolitan Police Department</p>
+            </div>
+          </div>
+          <div class="card-item">
+            <span class="card-date">2021.12</span>
+            <div class="card-content">
+              <h4><a href="https://k-sec.kochi-ct.ac.jp/topics-news/info-2.html">K-SEC Security Winter School 2021</a></h4>
+              <p>A 2-day hands-on security course for KOSEN students learning cyberattack and defense in a virtual environment</p>
+            </div>
+          </div>
+          <div class="card-item">
+            <span class="card-date">2021.10</span>
+            <div class="card-content">
+              <h4><a href="https://sc4y.connpass.com/event/223405/">Micro Hardening for Youth 2021</a></h4>
+              <p>Engaged in hands-on exercises defending a virtual e-commerce site against cyberattacks</p>
+            </div>
+          </div>
+          <div class="card-item">
+            <span class="card-date">2018.9</span>
+            <div class="card-content">
+              <h4><a href="https://procon.946oss.net">U-16 Programming Contest Kushiro Tournament</a> <span class="badge">4th Place</span></h4>
+              <p>Competed with a Ruby-based agent competition program</p>
+            </div>
+          </div>
+          <div class="card-item">
+            <span class="card-date">2018.9</span>
+            <div class="card-content">
+              <h4><a href="https://kitagoe.jp/doutou/iothackathon-201809-3/">Doto × IoT Hackathon 2018 Vol.2</a></h4>
+              <p>Proposed an SMS (Shelter Management System) utilizing Kintone and motion sensors</p>
+            </div>
+          </div>
+        </details>
+      </div>
     </section>
+
     <section>
-      <h2>Activities</h2>
-      <table class="even-row-gray">
-        <tr>
-          <td>Sep. 2018</td>
-          <td>Participated in <a href="https://east-hokkaido-iot.qloba.com">the Doto × IoT Hackathon</a></td>
-          <td>Proposed an SMS (Shelter Management System) utilizing Kintone and motion sensors</td>
-        </tr>
-        <tr>
-          <td>Sep. 2018</td>
-          <td>Competed in <a href="https://procon.946oss.net">the U-16 Programming Contest Kushiro Tournament</a></td>
-          <td>Placed 4th with a Ruby-based agent competition program</td>
-        </tr>
-        <tr>
-          <td>Oct. 2021</td>
-          <td>Participated in <a href="https://sc4y.connpass.com/event/223405/">Micro Hardening for Youth 2021</a></td>
-          <td>Engaged in hands-on exercises defending a virtual e-commerce site against cyberattacks</td>
-        </tr>
-        <tr>
-          <td>Dec. 2021</td>
-          <td>Attended <a href="https://k-sec.kochi-ct.ac.jp/topics-news/info-2.html">the K-SEC Security Winter School 2021</a></td>
-          <td>Studied cyberattacks and defense in a virtual environment</td>
-        </tr>
-        <tr>
-          <td>Feb. 2022</td>
-          <td>Participated in <a href="https://k-sec.kochi-ct.ac.jp/topics-news/info-2.html">the Cybersecurity “Top Gun Training”</a></td>
-          <td>Engaged in hands-on exercises on CSIRT incident response and cyberattack log analysis</td>
-        </tr>
-        <tr>
-          <td>Jun. 2022</td>
-          <td>Participated in <a href="https://nposw.org/kushiro220624/">Startup Weekend Kushiro</a></td>
-          <td>Awarded 3rd place for proposing a business model for a bereavement notification app</td>
-        </tr>
-        <tr>
-          <td>Jan.–May 2023</td>
-          <td>Participated in <a href="https://altema.is.tohoku.ac.jp/QA4U2/">"Quantum Annealing for You 2nd Party!"</a></td>
-          <td>Developed a home care shift optimization app using quantum annealing</td>
-        </tr>
-        <tr>
-          <td>Mar. 2023</td>
-          <td>Participated in <a href="https://www.hakodate-ct.ac.jp/2023/03/27/多国籍学生によるワークショップを中心とした「/">Hakodate KOSEN Global Seminar 2023</a></td>
-          <td>Received the Best Presentation Award for proposing an online shop for recyclable food waste addressing food loss issues</td>
-        </tr>
-        <tr>
-          <td>2024–2025</td>
-          <td>Participated in <a href="https://kosen-incubate.jp">the KIC (KOSEN Incubate Committee) Project</a></td>
-          <td><a href="https://prtimes.jp/main/html/rd/p/000000078.000099287.html">Contributed to a project developing an add-on device for small snowplows using FM-CW radar to detect obstacles in snow</a></td>
-        </tr>
-        <tr>
-          <td>Sep.–Dec. 2024</td>
-          <td>Studied abroad at <a href="https://www.turkuamk.fi/en/">Turku University of Applied Sciences, Finland</a></td>
-          <td>Took courses in <a href="https://www.turkuamk.fi/en/studies/ict-and-industrial-management/">ICT and Industrial Management, ICT Projects, and Cybersecurity</a></td>
-        </tr>
-        <tr>
-          <td>Mar. 2025</td>
-          <td>Participated in <a href="https://hokkaido.kosen-campus.com">the Hokkaido University × KOSEN Ideathon</a></td>
-          <td>Worked on building a DX system to centralize diverse and complex support for crime victims across institutions</td>
-        </tr>
-        <tr>
-          <td>Apr.–Aug. 2025</td>
-          <td>Participated in <a href="https://gci2.t.u-tokyo.ac.jp/archives/course/gci-2025-summer">the Global Consumer Intelligence (GCI) 2025 Summer</a></td>
-          <td>Studied the basics of AI and business problem-solving through data science</td>
-        </tr>
-        <tr>
-          <td>Jul. 2025–Present</td>
-          <td>Participating in <a href="https://weblab.t.u-tokyo.ac.jp/lecture/course-list/deep-generative-model/">DGM Summer 2025 (Deep Generative Models)</a></td>
-          <td>An intensive hands-on course covering generative models, from fundamentals to advanced diffusion models</td>
-        </tr>
-        <tr>
-          <td>Jul. 2025–Present</td>
-          <td>Participating in <a href="https://weblab.t.u-tokyo.ac.jp/lecture/course-list/deep-reinforcement-learning/">RL Summer 2025 (Deep Reinforcement Learning)</a></td>
-          <td>A short-term intensive course on deep reinforcement learning, covering theory and applications (robotics, game AI, finance)</td>
-        </tr>
-        <tr>
-          <td>Aug. 2025–Present</td>
-          <td>Participating in <a href="https://weblab.t.u-tokyo.ac.jp/lecture/course-list/financial-machin-learning/">Finance Summer 2025 (Financial Markets and Machine Learning)</a></td>
-          <td>An intensive course covering the foundations of financial markets and applications of machine learning in finance</td>
-        </tr>
-        <tr>
-          <td>Sep. 6–20, 2025</td>
-          <td>Participated in <a href="https://event.gaishishukatsu.com/hackathon/">Engineer Guild Hackathon</a></td>
-          <td>Awarded 3rd place for the <a href="https://github.com/Engineer-Guild-Hackathon/team-12-app">the development of “holo” — a new walking map app powered by an AI camera and user questions</a></td>
-        </tr>
-        <tr>
-          <td>Nov. 2025</td>
-          <td>Exhibiting at <a href="https://geek.supporterz.jp/geekten/2025">Geekten 2025 (Tech-Youth Exhibition)</a></td>
-          <td>Participation in the preliminary competition and <a href="https://www.canva.com/design/DAG3DqC0YbE/O8VCICs7NHVKhQyPS2IBIA/view?utm_content=DAG3DqC0YbE&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h64be4df23f#1">the development of “holo” — a new walking map app powered by an AI camera and user questions</a></td>
-        </tr>
-      </table>
-    </section>
-    <section>
-      <h2>Awards</h2>
-      <table>
-        <tr>
-          <td>Mar. 2023</td>
-          <td>Received the Excellent Academic Award at Advanced Technologies for SDGs</td>
-        </tr>
-      </table>
-    </section>
-    <section>
-      <h2>Conference Presentations</h2>
+      <h2 class="section-title font-en">Research</h2>
+
+      <h3 class="sub-title"><i class="ph ph-article text-accent"></i>Publications (2)</h3>
+      <div class="grid">
+        <a href="https://www.jstage.jst.go.jp/article/transinf/E109.D/3/E109.D_2025FCL0001/_pdf/-char/en" class="box">
+          <p class="pub-title">An Efficient Algorithm for the Detour Hinge Vertex Problem on Trapezoid Graphs</p>
+          <p class="pub-authors"><span class="me">Tomonari Izumi</span>, Yoko Nakajima, Tomoyosi Akiba, Takashi Yukawa, Hirotoshi Honma</p>
+          <p class="pub-journal font-en"><i>IEICE TRANS. INF. & SYST.</i>, VOL.<span class="bold">E109–D</span>, NO.3, MARCH 2026. DOI: 10.1587/transinf.2025FCL0001</p>
+        </a>
+        <a href="https://ph01.tci-thaijo.org/index.php/TNIJournal/article/view/251546/170964" class="box">
+          <p class="pub-title">Algorithm for Solving the Detour Hinge Vertex Problem on Circular-arc Graphs</p>
+          <p class="pub-authors">Yoko Nakajima, Shoma Nameki, <span class="me">Tomonari Izumi</span>, Hirotoshi Honma</p>
+          <p class="pub-journal font-en"><i>Journal of Engineering and Digital Technology</i>, Vol.<span class="bold">11</span>, No.1, pp.1-7, 2023.</p>
+        </a>
+      </div>
+
+      <h3 class="sub-title"><i class="ph ph-presentation-chart text-accent"></i>Presentations (7)</h3>
       <ol>
-        <li>Multi-Channel Communication Algorithm for Multi-Player Multi-Armed Bandits without Collision Sensing, <span class="myname">Tomonari Izumi*</span>, Atsuyoshi Nakamura, The 40th Annual Conference of the Japanese Society for Artificial Intelligence (JSAI2026), 2Yin-A-08, Takasaki, Jun., 2026. (<a href="../pdf/jsai2026_Izumi_fin.pdf">manuscript</a>)</li>
-        <li>Parallel Communication Algorithm for Multi-Player Multi-Armed Bandit Problem without Collision Information, <span class="myname">Tomonari Izumi*</span>, Online Prediction Math Workshop 2026, Poster Session P5, Sapporo, Mar., 2026.</li>
-        <li>Development of an Efficient Algorithm for Identifying the Maximum Detour Hinge Vertex in Networks with Trapezoid Graph Structures, <span class="myname">Tomonari Izumi*</span>, Yoko Nakajima, Hirotoshi Honma, <i>The Operations Research Society of Japan 2024 Spring Conference</i>, pp.96-97, Tsukuba City, Mar. 2024.</li>
-        <li>Development of an Efficient Algorithm for Identifying the Maximum Detour Hinge Vertex in Trapezoid Graphs, <span class="myname">Tomonari Izumi*</span>, Yoko Nakajima, Hirotoshi Honma, Toshihiro Fujito, <i>Hyper Interdisciplinary Conference Hokkaido Forum 2023</i>, Sapporo City, Sep. 2023.</li>
-        <li>Development of a Graph Algorithm Aimed at Reducing Maintenance Costs in Lifeline Networks with Intersection Graph Structures, <span class="myname">Tomonari Izumi*</span>, Hirotoshi Honma, Yoko Nakajima, Toshihiro Fujito, <i>Advanced Technologies for SDGs</i>, Toyohashi University of Technology, Mar. 2023.</li>
+        <li>Multi-Channel Communication Algorithm for Multi-Player Multi-Armed Bandits without Collision Sensing, <span class="myname">Tomonari Izumi*</span>, Atsuyoshi Nakamura, The 40th Annual Conference of the Japanese Society for Artificial Intelligence (JSAI2026), 2Yin-A-08, Takasaki, Jun., 2026. [<a href="../pdf/jsai2026_Izumi_fin.pdf"><i class="ph ph-link"></i>Manuscript</a>]</li>
+        <li>Parallel Communication Algorithm for Multi-Player Multi-Armed Bandit Problem without Collision Information, <span class="myname">Tomonari Izumi*</span>, <a href="https://www-alg.ist.hokudai.ac.jp/~atsu/online_prediction_math_ws2026.html">Online Prediction Math Workshop 2026</a>, Poster Session P5, Sapporo, Mar., 2026. [<a href="../pdf/ポスター_泉知成_オンライン予測数学ワークショップ.pdf"><i class="ph ph-link"></i>Poster</a>]</li>
+        <li>Development of an Efficient Algorithm for Identifying the Maximum Detour Hinge Vertex in Networks with Trapezoid Graph Structures, <span class="myname">Tomonari Izumi*</span>, Yoko Nakajima, Hirotoshi Honma, The Operations Research Society of Japan 2024 Spring Conference, pp.96--97, Tsukuba City, Mar., 2024.</li>
+        <li>Development of an Efficient Algorithm for Identifying the Maximum Detour Hinge Vertex in Trapezoid Graphs, <span class="myname">Tomonari Izumi*</span>, Yoko Nakajima, Hirotoshi Honma, Toshihiro Fujito, Hyper Interdisciplinary Conference Hokkaido Forum 2023, Sapporo City, Sep., 2023.</li>
+        <li>Development of a Graph Algorithm Aimed at Reducing Maintenance Costs in Lifeline Networks with Intersection Graph Structures, <span class="myname">Tomonari Izumi*</span>, Hirotoshi Honma, Yoko Nakajima, Toshihiro Fujito, <i>Advanced Technologies for SDGs</i>, Toyohashi University of Technology, Mar., 2023. <span class="badge">Excellent Academic Award</span></li>
         <li>Algorithm for Maximum Detour Hinge Vertices problem of Trapezoid Graphs, <span class="myname">Tomonari Izumi*</span>, Hirotoshi Honma, Yoko Nakajima, <i>The 7th International Conference on Science of Technology Innovation (STI-Gigaku2022)</i>, STI-9-9, pp.81, Nagaoka, Nov., 2022.</li>
         <li>Algorithm for Detour Hinge Vertex Problem of Circular-arc Graphs, <span class="myname">Tomonari Izumi*</span>, Syoma Nameki, Yoko Nakajima, Hirotoshi Honma, Toshihiro Fujito, <i>The 41st JSST Annual International Conference on Simulation Technology (JSST2022)</i>, Student Session, pp.29-32, Iizuka, Sep., 2022.</li>
       </ol>
     </section>
-    <section>
-      <h2>Publications</h2>
-      <ol>
-        <li><a href="https://www.jstage.jst.go.jp/article/transinf/E109.D/3/E109.D_2025FCL0001/_pdf/-char/en"><span class="myname">Tomonari Izumi</span>, Yoko Nakajima, Tomoyosi Akiba, Takashi Yukawa, Hirotoshi Honma, "An Efficient Algorithm for the Detour Hinge Vertex Problem on Trapezoid Graphs", <i>IEICE TRANS. INF. & SYST.</i>, Vol.<span class="bold">E109–D</span>, No.3, March 2026. DOI: 10.1587/transinf.2025FCL0001</a></li>
-        <li><a href="https://ph01.tci-thaijo.org/index.php/TNIJournal/article/view/251546/170964">Yoko Nakajima, Shoma Nameki, <span class="myname">Tomonari Izumi</span>, Hirotoshi Honma, "Algorithm for Solving the Detour Hinge Vertex Problem on Circular-arc Graphs", <i>Journal of Engineering and Digital Technology</i>, Vol.<span class="bold">11</span>, No.1, pp.1-7, 2023.</a></li>
-      </ol>
-    </section>
+
   </main>
   <footer>
     <p class="font-en">&copy; 2026 Tomonari Izumi. All rights reserved.</p>
