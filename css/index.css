@@ -13,7 +13,7 @@ Main Visual & Profile
 ============================ */
 
 .myname {
-    color: #314daa;
+    color: var(--primary);
     font-weight: bold;
 }
 
@@ -397,6 +397,11 @@ Publications
 }
 
 @media screen and (max-width: 768px) {
+    .myname {
+        width: fit-content;
+        margin: 20px auto 0;
+    }
+
     #main-visual {
         display: block;
         margin-bottom: 30px;
