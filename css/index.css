@@ -224,7 +224,10 @@ Activities List & Accordion
 
 .badge {
     display: inline-block;
-    margin: 0 8px 3px;
+    white-space: nowrap; /* ← 追加：バッジ内での文字の改行を禁止する */
+    vertical-align: middle; /* ← 追加：テキストと横並びになったときの縦位置を綺麗に揃える */
+
+    margin-bottom: 3px;
     padding: 2px 10px 0;
     background-color: #fef3c7;
     color: #b45309;
@@ -245,8 +248,15 @@ Activities List & Accordion
     font-weight: 700;
     color: var(--primary);
     margin: 0 0 4px;
-    display: inline-flex;
-    align-items: center;
+    /* display: inline-flex;
+    align-items: center; */
+
+    display: flex;
+    flex-wrap: wrap;     /* 画面幅が足りない時は要素ごと改行させる */
+    align-items: center; /* テキストとバッジの縦位置を中央で揃える */
+    gap: 6px 12px;       /* 縦の隙間を6px、横の隙間を12pxに設定 */
+    line-height: 1.5;    /* 読みやすいように行間を確保 */
+    margin-bottom: 4px;
 }
 
 .card-content h4 a {
@@ -403,5 +413,9 @@ Publications
         height: 200px;
         display: block;
         margin: 0 auto;
+    }
+
+    .card-item {
+        display: block;
     }
 }

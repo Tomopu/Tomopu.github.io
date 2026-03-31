@@ -68,6 +68,7 @@ h3 {
 
 a {
     cursor: pointer;
+    color: var(--text-main);
 }
 
 a:hover {
@@ -91,22 +92,22 @@ section {
     padding-bottom: 10px;
 }
 
-.section-header {
+.section-title {
     display: flex;
     align-items: center;
     gap: 16px;
-}
+    margin-bottom: 32px;
 
-.section-title {
     font-size: 24px;
     font-weight: 700;
     color: var(--primary);
 }
 
-.section-line {
+.section-title::after {
+    content: '';
     flex-grow: 1;
     height: 1.5px;
-    background-color: var(--border-color);
+    background-color: #e0e0e0;
 }
 
 .section-label {
