@@ -2,37 +2,54 @@
 
 header {
     position: fixed;
-    display: flex;
     z-index: 999;
-    justify-content: space-between;
     align-items: center;
     width: 100%;
-    background-color: #ffffff;
+    background-color: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border-color);
 }
 
-.header_logo {
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 90%;
+    margin: 0 auto;
+}
+
+header a {
+    color: var(--text-main);
+}
+
+.header-logo {
     display: flex;
     justify-content: center;
     align-items: center;
     text-decoration: none;
+    margin: 10px 0;
 }
 
-.header_logo img {
-    width: 45px;
-    height: 45px;
+.header-logo img {
+    width: 40px;
+    height: 40px;
     border: 1px solid #dadada;
     border-radius: 50px;
     margin: 0 20px 0 15px;
 }
 
-.header_logo h1 {
+.header-logo span {
     font-weight: 700;
-    font-size: 30px;
+    font-size: 20px;
+}
+
+.header-logo-text {
+    padding: 4px 0 0 0;
 }
 
 .lang-change {
     margin-right: 20px;
-    padding: 10px 0px;
+    padding: 10px 0px 10px 10px;
 }
 
 .lang-change a {
@@ -47,20 +64,32 @@ header {
     height: 16px;
 }
 
-.header_list {
+.header-nav {
     display: flex;
+    align-items: center;
 }
 
-.header_list-item {
+.header-nav-item {
     list-style: none;
 }
 
-.header_list-link {
+.header-nav-link {
     text-decoration: none;
     color: #262628;
     display: block;
     margin-right: 20px;
     padding: 10px 0px;
+}
+
+.nav-divider {
+    width: 1.5px;
+    height: 16px;
+    margin: 0 10px 0 4px;
+    background-color: #cbd5e1;
+}
+
+.nav-github a {
+    padding: 4px 0 0 0;
 }
 
 .hamburger-checkbox {
@@ -84,16 +113,31 @@ header {
 }
 
 @media screen and (max-width: 768px) {
-    .header_logo img {
+    .lang-change {
+        margin-right: 20px;
+        padding: 10px 0px 10px 0;
+    }
+    .header-container {
+        width: 100%;
+    }
+    .header-logo img {
         width: 38px;
         height: 38px;
     }
 
-    .header_logo h1 {
+    .header-logo h1 {
         font-size: 20px;
     }
 
-    .hamburger-menu_list {
+
+    .nav-divider {
+        width: 150px;
+        height: 1.5px;
+        margin: 10px 0;
+        background-color: #cbd5e1;
+    }
+
+    .hamburger-menu-list {
         background-color: #ffffff;
         align-items: flex-start;
         flex-direction: column;
@@ -107,7 +151,7 @@ header {
         height: 100vh;;
     }
 
-    #hamburger:checked ~ .hamburger-menu_list {
+    #hamburger:checked ~ .hamburger-menu-list {
         transform: translateX(0%);
     }
 

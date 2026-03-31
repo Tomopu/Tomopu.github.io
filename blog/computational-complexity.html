@@ -6,11 +6,13 @@
   <link rel="icon" href="/img/favicon.ico" type="image/x-icon">
   <link rel="stylesheet" href="/css/global.css">
   <link rel="stylesheet" href="/css/header.css">
+  <link rel="stylesheet" href="/css/footer.css">
   <link rel="stylesheet" href="/css/blog.css">
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New&display=swap" rel="stylesheet">
+  <!-- <link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New&display=swap" rel="stylesheet"> -->
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP&display=swap" rel="stylesheet">
   <!-- KaTeX -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/katex.min.css" integrity="sha384-5TcZemv2l/9On385z///+d7MSYlvIEw9FuZTIdZ14vJLqWphw7e7ZPuOiCHJcFCP" crossorigin="anonymous">
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/katex.min.js" integrity="sha384-cMkvdD8LoxVzGF/RPUKAcvmm49FQ0oxwDF3BGKtDXcEc+T1b2N+teh/OJfpU0jr6" crossorigin="anonymous"></script>
@@ -49,45 +51,50 @@
 
 <body>
   <header id="header">
-    <a href="/" class="header_logo">
-      <img src="/img/icon.jpeg" alt="icon" class="icon">
-      <h1>IZUMI TOMONARI</h1>
-    </a>
-    <input type="checkbox" name="hamburger" id="hamburger" class="hamburger-checkbox"/>
-    <ul class="header_list hamburger-menu_list">
-      <li class="header_list-item">
-        <a href="/math.html" class="header_list-link">教材リンク集</a>
-      </li>
-      <li class="header_list-item">
-        <a href="/blog/" class="header_list-link">ブログ一覧</a>
-      </li>
-      <li class="header_list-item">
-        <a href="/link.html" class="header_list-link">リンク集</a>
-      </li>
-      <li class="header_list-item lang-change">
-        <a href="/en"><svg width="100%" height="100%" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C15 4 15.9228 8.29203 16 12C15.9228 15.708 15 20 12 22M12 2C9 4 8.07725 8.29203 8 12C8.07725 15.708 9 20 12 22M12 2C6.47715 2 2 6.47715 2 12M12 2C17.5228 2 22 6.47715 22 12M12 22C17.5229 22 22 17.5228 22 12M12 22C6.47716 22 2 17.5228 2 12M22 12C20 15 15.708 15.9228 12 16C8.29203 15.9228 4 15 2 12M22 12C20 9 15.708 8.07725 12 8C8.29203 8.07725 4 9 2 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>EN</a>
-      </li>
-      <li class="header_list-item">
-        <a href="https://github.com/Tomopu" class="header_list-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path d="M12 1C5.9225 1 1 5.9225 1 12C1 16.8675 4.14875 20.9787 8.52125 22.4362C9.07125 22.5325 9.2775 22.2025 9.2775 21.9137C9.2775 21.6525 9.26375 20.7862 9.26375 19.865C6.5 20.3737 5.785 19.1912 5.565 18.5725C5.44125 18.2562 4.905 17.28 4.4375 17.0187C4.0525 16.8125 3.5025 16.3037 4.42375 16.29C5.29 16.2762 5.90875 17.0875 6.115 17.4175C7.105 19.0812 8.68625 18.6137 9.31875 18.325C9.415 17.61 9.70375 17.1287 10.02 16.8537C7.5725 16.5787 5.015 15.63 5.015 11.4225C5.015 10.2262 5.44125 9.23625 6.1425 8.46625C6.0325 8.19125 5.6475 7.06375 6.2525 5.55125C6.2525 5.55125 7.17375 5.2625 9.2775 6.67875C10.1575 6.43125 11.0925 6.3075 12.0275 6.3075C12.9625 6.3075 13.8975 6.43125 14.7775 6.67875C16.8813 5.24875 17.8025 5.55125 17.8025 5.55125C18.4075 7.06375 18.0225 8.19125 17.9125 8.46625C18.6138 9.23625 19.04 10.2125 19.04 11.4225C19.04 15.6437 16.4688 16.5787 14.0213 16.8537C14.42 17.1975 14.7638 17.8575 14.7638 18.8887C14.7638 20.36 14.75 21.5425 14.75 21.9137C14.75 22.2025 14.9563 22.5462 15.5063 22.4362C19.8513 20.9787 23 16.8537 23 12C23 5.9225 18.0775 1 12 1Z"></path></svg></a>
-      </li>
-    </ul>
-    <label for="hamburger" class="hamburger-button">
-      <span class="hamburger-mark"></span>
-      <span class="hamburger-mark"></span>
-      <span class="hamburger-mark"></span>
-    </label>
+    <div class="header-container">
+      <a href="/" class="header-logo">
+        <img src="/img/icon.jpeg" alt="icon" class="icon">
+        <span class="header-logo-text font-en">IZUMI TOMONARI</span>
+      </a>
+      <input type="checkbox" name="hamburger" id="hamburger" class="hamburger-checkbox"/>
+      <ul class="header-nav hamburger-menu-list">
+        <li class="header-nav-item">
+          <a href="/math.html" class="header-nav-link">教材リンク集</a>
+        </li>
+        <li class="header-nav-item">
+          <a href="/blog/" class="header-nav-link">ブログ一覧</a>
+        </li>
+        <li class="header-nav-item">
+          <a href="/link.html" class="header-nav-link">リンク集</a>
+        </li>
+        <li class="header-nav-item">
+          <div class="nav-divider"></div>
+        </li>
+        <li class="header-nav-item lang-change">
+          <a href="/en"><svg class="svg-icon" width="100%" height="100%" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C15 4 15.9228 8.29203 16 12C15.9228 15.708 15 20 12 22M12 2C9 4 8.07725 8.29203 8 12C8.07725 15.708 9 20 12 22M12 2C6.47715 2 2 6.47715 2 12M12 2C17.5228 2 22 6.47715 22 12M12 22C17.5229 22 22 17.5228 22 12M12 22C6.47716 22 2 17.5228 2 12M22 12C20 15 15.708 15.9228 12 16C8.29203 15.9228 4 15 2 12M22 12C20 9 15.708 8.07725 12 8C8.29203 8.07725 4 9 2 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>EN</a>
+        </li>
+        <li class="header-nav-item">
+          <a href="https://github.com/Tomopu" class="header-nav-link"><i class="devicon-github-plain" style="font-size: 25px;"></i></a>
+        </li>
+      </ul>
+      <label for="hamburger" class="hamburger-button">
+        <span class="hamburger-mark"></span>
+        <span class="hamburger-mark"></span>
+        <span class="hamburger-mark"></span>
+      </label>
+    </div>
   </header>
 
   <main id="main">
     <h1>アルゴリズムの効率の指標について</h1>
     <p>作成日: 2025年10月21日, 最終更新日: 2025年10月21日</p>
     <section>
-      <h2>はじめに</h2>
+      <h2 class="section-title">はじめに</h2>
       <p>本稿は, 筆者がアルゴリズム工学の研究に取り組むにあたり, 理論的な整理と基本概念の再確認を目的として作成した備忘録である. 外部読者に向けた包括的な解説や体系的な網羅を意図するものではなく, 自身の理解の定着と再参照を主眼に置いている.</p>
       <p>自身の研究の基盤を明確にすることを目的とし, 必要最小限の範囲において記述を行う.</p>
     </section>
     <section>
-      <h2>計算量とは</h2>
+      <h2 class="section-title">計算量とは</h2>
       <p>計算量 (Computational Complexity) とは, アルゴリズムの効率性を客観的に評価するための指標である. これは, アルゴリズムが問題を解くために必要な資源 (主に時間や空間) の量を, 入力サイズ n の関数として表現する. 計算量は, プログラムがどのくらい速く動作するか, どのくらいのメモリを使用するかを数学的に表現し, 異なるアルゴリズム同士を公平に比較するために用いられる. </p>
       <h3>計算量の評価と漸近記法</h3>
       <p>アルゴリズムの実行時間は, 特定の計算機環境やコンパイラに依存しないよう, アルゴリズムの実装とは独立に, 実行ステップ数 (計算機上での基本的な演算の回数) を基準に評価する必要がある. </p>
@@ -105,7 +112,7 @@
       <p>したがって, 時間計算量 $T(n)=3n^2 +5n+100$ のアルゴリズムは, $O(n^2)$ と表記される. $O$ 記法は「<span class="bold marker-yellow">最大でも計算時間はこれくらい</span>」という漸近的な上界を示すため, アルゴリズムの最悪ケースの性能を見積もる際によく使用される.</p>
     </section>
     <section>
-      <h2>アルゴリズムの複雑性</h2>
+      <h2 class="section-title">アルゴリズムの複雑性</h2>
       <p>アルゴリズムの効率性を評価する上で, 計算量が <span class="bold marker-yellow">多項式関数</span> で抑えられるか, <span class="bold marker-yellow">指数関数</span> で増加するかどうかが, アルゴリズムが「効率的」であるか, 「非効率的」 (手に負えない) であるかを分ける決定的な境界線となっている.</p>
 
       <h3>多項式時間アルゴリズム (Polynomial Time Algorithm)</h3>
@@ -300,7 +307,7 @@
 
     </section>
     <section>
-      <h2>その他の漸近的記法</h2>
+      <h2 class="section-title">その他の漸近的記法</h2>
       <p>漸近記法には $O$ 記法の他にも, 下界やタイトな限界, さらには厳密な大小関係を示す記法が存在する. これらは総称してランダウの記号と呼ばれ, 計算機科学においてドナルド・クヌースによって体系化された</p>
 
       <h3>$\Omega$ 記法 (Big Omega 記法)：漸近的な下界</h3>
@@ -379,7 +386,9 @@
     </table>
     </section>
   </main>
-  <footer></footer>
+  <footer>
+    <p class="font-en">&copy; 2026 Tomonari Izumi. All rights reserved.</p>
+  </footer>
   <script src="/js/header.js"></script>
 </body>
 </html>

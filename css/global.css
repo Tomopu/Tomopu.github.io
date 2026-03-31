@@ -1,5 +1,20 @@
 @charset "UTF-8";
 
+:root {
+    --primary: #1e293b;
+    --secondary: #334155;
+    --accent: #0284c7;
+    --bg-light: #f8fafc;
+    --text-main: #1e293b;
+    --text-muted: #64748b;
+    --border-color: #e2e8f0;
+    --white: #ffffff;
+    --marker-yellow: #faf3de;
+    --marker-blue: #e9f4f7;
+    --marker-red: #faedec;
+    --marker-green: #eef4ed;
+}
+
 * {
     font-style: normal;
     font-weight: 400;
@@ -7,14 +22,25 @@
     padding: 0;
 }
 
-/* KaTeX以外のフォント設定 */
-*:not(.katex):not(.katex *) {
-    font-family: "Zen Kaku Gothic New", sans-serif;
+body {
+    background-color: var(--bg-light);
+    color: var(--text-main);
+    line-height: 1.6;
 }
 
-p, li, a, h1, h2, h3, h4, h5, h6 {
-    color: #262628;
+/* KaTeX以外のフォント設定 */
+*:not(.katex):not(.katex *) {
+    /* font-family: "Noto Sans JP", sans-serif; */
+    font-family: 'IBM Plex Sans JP', sans-serif;
 }
+
+.font-en {
+    font-family: 'Poppins', sans-serif;;
+}
+
+/* p, li, a, h1, h2, h3, h4, h5, h6 {
+    color: var(--text-main);
+} */
 
 h1, h2, h3, h4, h5, h6 {
     font-weight: 700;
@@ -29,12 +55,12 @@ h1 span {
     font-weight: 700;
 }
 
-h2 {
-    color: #ffffff;
-    background-color: #262628;
+/* h2 {
+    color: var(--white);
+    background-color: var(--primary);
     padding: 5px 20px;
     width: fit-content;
-}
+} */
 
 h3 {
     font-size: 20px;
@@ -42,6 +68,7 @@ h3 {
 
 a {
     cursor: pointer;
+    color: var(--text-main);
 }
 
 a:hover {
@@ -52,12 +79,99 @@ main {
     margin: 0 auto;
     padding: 10px;
     width: 85%;
+    max-width: 1000px;
 }
 
+.text-muted {
+    color: var(--text-muted);
+}
+
+/* 共通レイアウト */
 section {
     margin: 10px 10px 30px 10px;
-    padding-bottom: 20px;
-    border-bottom: solid 1px #e5e4e4;
+    padding-bottom: 10px;
+}
+
+.section-title {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 32px;
+
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--primary);
+}
+
+.section-title::after {
+    content: '';
+    flex-grow: 1;
+    height: 1.5px;
+    background-color: #e0e0e0;
+}
+
+.section-label {
+    font-size: 14px;
+    font-weight: 700;
+    color: #94a3b8;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* タグ (Keywords, Skills用) */
+.tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.tag {
+    padding: 4px 12px;
+    border-radius: 9999px;
+    font-size: 14px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+}
+
+.tag.outline {
+    background-color: var(--white);
+    border: 1px solid var(--border-color);
+    color: var(--text-muted);
+}
+
+.tag.accent {
+    background-color: rgba(2, 132, 199, 0.1);
+    border: 1px solid rgba(2, 132, 199, 0.2);
+    color: var(--accent);
+    font-weight: 500;
+}
+
+.tag.solid {
+    background-color: #f1f5f9;
+    color: var(--secondary);
+    font-weight: 500;
+}
+
+.tag.solid-blue {
+    background-color: #eff6ff;
+    color: #1d4ed8;
+    font-weight: 500;
+}
+
+/* 汎用クラス */
+/* .two-columns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+} */
+.two-columns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    /* gap: 48px; */
 }
 
 ol li {
@@ -95,19 +209,19 @@ tr td:nth-child(2) {
 }
 
 .marker-yellow {
-    background-color: #faf3de;
+    background-color: var(--marker-yellow);
 }
 
 .marker-blue {
-    background-color: #e9f4f7;
+    background-color: var(--marker-blue);
 }
 
-.maker-red {
-    background-color: #faedec;
+.marker-red {
+    background-color: var(--marker-red);
 }
 
-.maker-green {
-    background-color: #eef4ed;
+.marker-green {
+    background-color: var(--marker-green);
 }
 
 .even-row-gray tr:nth-child(even) {
@@ -122,12 +236,6 @@ tr td:nth-child(2) {
     white-space: nowrap;
 }
 
-.two-columns {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 16px;
-}
-
 .figure {
     text-align: center;
     margin: 16px 0;
@@ -135,6 +243,10 @@ tr td:nth-child(2) {
 
 .figure img{
     max-width: 600px;
+}
+
+.text-accent {
+    color: var(--accent);
 }
 
 .accordion {
@@ -180,6 +292,12 @@ tr td:nth-child(2) {
     background-color: #fff;
 }
 
+@media screen and (max-width: 768px) {
+    .two-columns {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+}
 
 @media screen and (max-width: 600px) {
     main {

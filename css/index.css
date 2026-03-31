@@ -1,16 +1,20 @@
 @charset "UTF-8";
 
-.myname {
-    color: #314daa;
-    font-weight: bold;
-}
-
 body {
     position: relative;
 }
 
 span {
     display: inline-block;
+}
+
+/* ============================
+Main Visual & Profile
+============================ */
+
+.myname {
+    color: var(--primary);
+    font-weight: bold;
 }
 
 #main-visual {
@@ -24,11 +28,380 @@ span {
 }
 
 #myface {
-    width: 400px;
-    height: 400px;
+    width: 350px;
+    height: 350px;
+    border: 6px solid var(--white);
+    border-radius: 16px;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px 6px rgba(0, 0, 0, 0.05);
+}
+
+.hero-title {
+    font-size: 19px;
+    background: none;
+    color: #8492a5;
+    margin: 20px 0 8px 0;
+    padding: 0px;
+}
+
+.hero-title i {
+    padding-right: 7px;
+}
+
+.tip-box {
+    margin: 4px 8px 4px 0;
+    padding: 8px 16px 4px 16px;
+    background-color: var(--white);
+    font-size: 14px;
+    border: 1px solid #f1f5f9;
+    border-radius: 40px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+/* ============================
+Skills List
+============================ */
+
+.skill{
+    display: inline-flex;  /* Flexboxを使って横並びにする */
+    align-items: center;   /* 縦の真ん中で揃える */
+    line-height: 1.2;      /* 余計な行高（上下の余白）を消す */
+    gap: 6px;              /* アイコンとテキストの間のスペース */
+    margin: 4px 8px 4px 0;
+    padding: 8px 12px 6px;
+    border-radius: 11px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.skill i {
+    display: flex;
+}
+
+.backend {
+    background-color: #F0F6FF;
+    border: 1px solid #BFE0FF;
+    color: #005A9E;
+}
+
+.frontend {
+    background-color: #FFF2F0;
+    border: 1px solid #FFCCC7;
+    color: #A32A22;
+}
+
+.infra {
+    background-color: #EAF8F1;
+    border: 1px solid #B8E6D3;
+    color: #0E6245;
+}
+
+.mobile {
+    background-color: #F5F0FF;
+    border: 1px solid #D9C2FF;
+    color: #553098;
+}
+
+.api {
+    background-color: #FFF8E6;
+    border: 1px solid #FFE099;
+    color: #9C5700;
+}
+
+.design {
+    background-color: #E4F7FB;
+    border: 1px solid #A1E4F2;
+    color: #007B83;
+}
+
+.misc {
+    background-color: #F6F8FA;
+    border: 1px solid #D0D7DE;
+    color: #3F434A;
+}
+
+/* ============================
+Timeline (Education / Experience)
+============================ */
+.timeline {
+    display: flex;
+    flex-direction: column;
+}
+
+.timeline-item {
+    position: relative;
+    padding-left: 32px;
+    padding-bottom: 25px;
+}
+
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    left: 7px;
+    top: 8px;
+    bottom: -8px;
+    width: 2px;
+    background-color: var(--border-color);
+}
+
+.timeline-item:last-child::before {
+    bottom: 0;
+}
+
+.timeline-item::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 8px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: var(--accent);
+    border: 2px solid var(--white);
+    box-shadow: 0 0 0 2px var(--border-color);
+}
+
+.timeline-date {
+    font-size: 14px;
+    font-weight: 700;
+    color: #94a3b8;
+    margin-bottom: 4px;
+    display: block;
+}
+
+.timeline-date.active {
+    color: var(--accent);
+}
+
+.timeline-title {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--primary);
+}
+
+.timeline-title a{
+    margin: 0;
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--primary);
+}
+
+.timeline-desc {
+    color: var(--text-muted);
+    font-size: 14px;
+    margin-top: 4px;
+}
+
+/* ============================
+Activities List & Accordion
+============================ */
+.card-list {
+    background-color: var(--white);
+    border-radius: 16px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+    border: 1px solid #f1f5f9;
+    overflow: hidden;
+}
+
+.card-item {
+    padding: 20px;
+    display: flex;
+    gap: 24px;
+    border-bottom: 1px solid #f1f5f9;
+    transition: background-color 0.2s;
+}
+
+.card-item:last-child {
+    border-bottom: none;
+}
+
+.card-item:hover {
+    background-color: #f8fafc;
+}
+
+.card-item.bg-muted {
+    background-color: rgba(248, 250, 252, 0.5);
+}
+
+.badge {
+    display: inline-block;
+    white-space: nowrap; /* ← 追加：バッジ内での文字の改行を禁止する */
+    vertical-align: middle; /* ← 追加：テキストと横並びになったときの縦位置を綺麗に揃える */
+
+    margin-bottom: 3px;
+    padding: 2px 10px 0;
+    background-color: #fef3c7;
+    color: #b45309;
+    font-size: 12px;
+    border-radius: 9999px;
+}
+
+.card-date {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text-muted);
+    height: fit-content;
+    width: 96px;
+    flex-shrink: 0;
+}
+
+.card-content h4 {
+    font-weight: 700;
+    color: var(--primary);
+    margin: 0 0 4px;
+    /* display: inline-flex;
+    align-items: center; */
+
+    display: flex;
+    flex-wrap: wrap;     /* 画面幅が足りない時は要素ごと改行させる */
+    align-items: center; /* テキストとバッジの縦位置を中央で揃える */
+    gap: 6px 12px;       /* 縦の隙間を6px、横の隙間を12pxに設定 */
+    line-height: 1.5;    /* 読みやすいように行間を確保 */
+    margin-bottom: 4px;
+}
+
+.card-content h4 a {
+    font-weight: 700;
+    color: var(--primary);
+    text-decoration: none;
+    transition: color 0.2s;
+    margin-right: 5px;
+}
+
+.card-content p {
+    font-size: 14px;
+    color: var(--text-muted);
+}
+
+.card-content p a {
+    font-size: 14px;
+    color: var(--text-muted);
+}
+
+.accordion-summary {
+    padding: 16px;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text-muted);
+    cursor: pointer;
+    list-style: none; /* デフォルトの矢印を消す */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    background-color: var(--white);
+    transition: background-color 0.2s;
+}
+
+.accordion-summary:hover {
+    background-color: #f8fafc;
+}
+
+.accordion-summary::-webkit-details-marker {
+    display: none;
+}
+
+.accordion-summary i {
+    transition: transform 0.3s;
+}
+
+details[open] .accordion-summary i {
+    transform: rotate(180deg);
+}
+
+details[open] .card-item:first-child {
+    border-top: 1px solid #f1f5f9;
+}
+
+
+/* ============================
+Publications
+============================ */
+
+.sub-title {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--secondary);
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.grid {
+    display: grid;
+    gap: 16px;
+    margin-bottom: 32px;
+}
+
+.box {
+    display: block;
+    text-decoration: none;
+    padding: 20px;
+    background-color: var(--white);
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+    transition: all 0.3s;
+}
+
+.box:hover {
+    border-color: var(--accent);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.pub-title {
+    color: var(--accent);
+    font-weight: 700;
+    margin-bottom: 8px;
+    line-height: 1.5;
+    transition: color 0.3s;
+}
+
+.box:hover {
+    color: var(--accent);
+}
+
+.pub-authors {
+    font-size: 14px;
+    color: var(--text-muted);
+    margin-bottom: 8px;
+}
+
+.me{
+    font-weight: 700;
+    color: var(--primary);
+    text-decoration: underline;
+    text-decoration-color: #cbd5e1;
+    text-underline-offset: 3px;
+}
+
+.pub-journal {
+    font-size: 12px;
+    color: #94a3b8;
+}
+
+.presentation-wrapper {
+    padding-top: 16px;
+}
+
+.presentation-list {
+    list-style-type: decimal;
+    margin-left: 20px;
+    font-size: 14px;
+    color: var(--text-muted);
+}
+
+.presentation-list li {
+    margin-bottom: 12px;
+    padding-left: 8px;
 }
 
 @media screen and (max-width: 768px) {
+    .myname {
+        width: fit-content;
+        margin: 20px auto 0;
+    }
+
     #main-visual {
         display: block;
         margin-bottom: 30px;
@@ -45,5 +418,9 @@ span {
         height: 200px;
         display: block;
         margin: 0 auto;
+    }
+
+    .card-item {
+        display: block;
     }
 }
