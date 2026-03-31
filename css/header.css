@@ -12,6 +12,7 @@ header {
 
 .header-container {
     display: flex;
+    align-items: center;
     justify-content: space-between;
     width: 90%;
     margin: 0 auto;
@@ -40,6 +41,10 @@ header a {
 .header-logo span {
     font-weight: 700;
     font-size: 20px;
+}
+
+.header-logo-text {
+    padding: 4px 0 0 0;
 }
 
 .lang-change {
@@ -81,6 +86,10 @@ header a {
     height: 16px;
     margin: 0 10px 0 4px;
     background-color: #cbd5e1;
+}
+
+.nav-github a {
+    padding: 4px 0 0 0;
 }
 
 .hamburger-checkbox {
