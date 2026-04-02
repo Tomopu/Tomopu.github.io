@@ -280,9 +280,9 @@ Activities List & Accordion
 .accordion-summary {
     padding: 16px;
     text-align: center;
-    font-size: 14px;
+    font-size: 16px;
     font-weight: 500;
-    color: var(--text-muted);
+    color: var(--accent);
     cursor: pointer;
     list-style: none; /* デフォルトの矢印を消す */
     display: flex;
