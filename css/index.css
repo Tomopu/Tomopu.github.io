@@ -13,6 +13,11 @@ Main Visual & Profile
 ============================ */
 
 .myname {
+    color: var(--accent);
+    font-weight: bold;
+}
+
+.main-visual-myname {
     color: var(--primary);
     font-weight: bold;
 }
@@ -397,7 +402,7 @@ Publications
 }
 
 @media screen and (max-width: 768px) {
-    .myname {
+    .main-visual-myname {
         width: fit-content;
         margin: 20px auto 0;
     }
