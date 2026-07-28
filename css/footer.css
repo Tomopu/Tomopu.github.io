@@ -8,3 +8,14 @@ footer {
     color: var(--text-muted);
     font-size: 14px;
 }
+
+.footer-content {
+    margin: 0 12px;
+    white-space: nowrap;
+}
+
+@media screen and (max-width: 480px) {
+    .footer-content {
+        font-size: clamp(9px, 2.8vw, 12px);
+    }
+}
